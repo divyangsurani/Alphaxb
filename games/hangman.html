@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <title>Hangman</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://alphaxb.com/hangman" />
+	<link rel="icon" href="images/mylogo.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script defer src="https://chergav.github.io/en_word.js"></script>
+
+    <style>
+         :root {
+            --back-color: #303030;
+            --text-color: #fff;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--back-color);
+            color: var(--text-color);
+            fill: var(--text-color);
+            transition: all .5s;
+        }
+        
+        #allButtons {
+            margin: auto;
+            display: flex;
+            flex-flow: row wrap;
+            max-width: 338px;
+            justify-content: center;
+        }
+        
+        .check_text {
+            padding: 12px 20px;
+            border: 1px solid #999;
+            display: inline-block;
+            border-radius: 3px;
+            font-size: 17px;
+            user-select: none;
+            margin: 2px;
+        }
+        
+        table {
+            border-spacing: 0px;
+        }
+        
+        input[type="checkbox"] {
+            width: 0px;
+            height: 0px;
+            opacity: 0;
+            position: absolute;
+        }
+        
+        .icons {
+            margin: 8px 0 5px 0;
+            padding-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #555;
+        }
+        
+        svg {
+            cursor: pointer;
+        }
+        
+        #smile svg {
+            cursor: default;
+        }
+        
+        div .rigth {
+            background: darkgreen;
+            opacity: .5;
+        }
+        
+        div .wrong {
+            background-color: darkred;
+            opacity: .5;
+        }
+        
+        #lang {
+            border: 1px solid #999;
+            border-radius: 3px;
+            width: 32px;
+            height: 22px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        #word {
+            font-size: 23px;
+            margin: 8px 0 8px 0;
+            text-align: center;
+        }
+        
+        #modal_wrap.modal_open {
+            display: block;
+        }
+        
+        .modal_wrap {
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+        }
+        
+        #modal {
+            box-sizing: border-box;
+            position: relative;
+            max-width: 358px;
+            margin: 25px auto;
+            background: var(--back-color);
+            color: var(--text-color);
+            border: 1px solid #444;
+            border-radius: 3px;
+            padding-top: 3px;
+            overflow-y: initial;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        #close_mod {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+        }
+        
+        #image,
+        #external {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #open_wiki {
+            cursor: pointer;
+            text-align: end;
+            margin-bottom: 10px;
+            background: transparent;
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 5px 10px;
+            color: var(--text-color);
+        }
+        
+        #open_wiki:disabled {
+            opacity: .5;
+        }
+        
+        #mod_over {
+            max-height: calc(100vh - 56px);
+            overflow-y: auto;
+        }
+        
+        #notification {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            left: 50%;
+            bottom: -60px;
+            min-width: 320px;
+            transform: translate(-50%);
+            background: #222;
+            color: #fff;
+            padding: 16px 8px;
+            text-align: center;
+            border-radius: 2px;
+            font-size: 15px;
+            transition: .2s;
+            box-shadow: 0 6px 6px -3px rgba(0, 0, 0, .2), 0 10px 14px 1px rgba(0, 0, 0, .14), 0 4px 18px 3px rgba(0, 0, 0, .12);
+        }
+        
+        #reload {
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        body div#notification.show {
+            bottom: 15px;
+        }
+        
+        a {
+            color: royalblue;
+        }
+        
+        #external {
+            margin-top: 50px;
+            font-family: Roboto;
+            fill: inherit;
+        }
+        
+        #score_ver {
+            text-align: center;
+            margin: 8px 0 0 0;
+            padding: 5px 0 5px 0;
+            border-top: 1px solid #555;
+            font-size: 13px;
+        }
+        
+        label {
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no">
+
+    <body>
+        <main style="margin: auto">
+            <div class="icons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="theme">
+				<title>dark/light theme</title>
+				<path d="M0 0h24v24H0z" fill="none"/>
+				<path d="M20 15.31L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18V6c3.31 0 6 2.69 6 6s-2.69 6-6 6z"/>
+			</svg>
+                <div id="lang" title="switch language" style="display: none;"></div>
+                <a href="../games"><button style="background-color: #303030; color: white; border: none; cursor: pointer;">Go Back</button></a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="restart">
+				<title>new game</title>
+				<path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+				<path d="M0 0h24v24H0z" fill="none"/>
+			</svg>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items: center;">
+                <div id="smile"></div>
+                <span id="error" style="font-size:13px;"></span>
+            </div>
+            <p id="word"></p>
+            <div style="text-align: end">
+                <button id="open_wiki"></button>
+            </div>
+            <div id="buttons"></div>
+            <p id="score_ver">
+                wins: <span id="wins_score"></span> of <span id="total_games"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="margin-bottom: -5px;" id="clear_score">
+			<title>remove stat</title>
+				<path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/>
+				<path d="M0 0h24v24H0z" fill="none"/>
+			</svg>
+            </p>
+        </main>
+        <div id="modal_wrap" class="modal_wrap">
+            <div id="modal">
+                <div id="mod_over">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="close_mod" width="24" height="24" viewBox="0 0 24 24">
+					<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+					<path d="M0 0h24v24H0z" fill="none"/>
+				</svg>
+                    <div id="image">
+                        <img src="" id="thumbnail">
+                    </div>
+                    <div style="padding:0 10px 3px 10px">
+                        <p id="title"></p>
+                        <div id="extract"></div>
+                        <a href="" target="_blank" rel="noopener" id="link-to-w"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="notification">New version is available.
+            <a id="reload">UPDATE</a>
+            <svg xmlns="http://www.w3.org/2000/svg" id="close_update" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+			<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+        </div>
+    </body>
+    <script src="../assets/games_js/hangman_exucation.js"></script>
+
+
+    <script id="rendered-js">
+        'use strict';
+        const SMILE = [
+            '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 496 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8Zm80,152a32,32,0,1,1-32,32A32,32,0,0,1,328,160Zm-160,0a32,32,0,1,1-32,32A32,32,0,0,1,168,160ZM398.9,306A144.12,144.12,0,0,1,256,432H240A144.12,144.12,0,0,1,97.1,306a16.06,16.06,0,0,1,14-17.88A15,15,0,0,1,113,288H383a16,16,0,0,1,16,16A16.64,16.64,0,0,1,398.9,306Z" class="fa-secondary"/><path d="M328,160a32,32,0,1,0,32,32A32,32,0,0,0,328,160Zm-160,0a32,32,0,1,0,32,32A32,32,0,0,0,168,160Z" class="fa-primary"/></svg>',
+            '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 496 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8Zm80,168a32,32,0,1,1-32,32A32,32,0,0,1,328,176Zm-160,0a32,32,0,1,1-32,32A32,32,0,0,1,168,176ZM391.8,338.7c-9.3,55-83.2,93.3-143.8,93.3s-134.5-38.3-143.8-93.3a16,16,0,0,1,20.7-17.9C155.1,330.5,200,336,248,336s92.9-5.5,123.1-15.2c11.3-3.7,22.6,6.1,20.7,17.9Z" class="fa-secondary"/><path d="M168,176a32,32,0,1,0,32,32A32,32,0,0,0,168,176Zm160,0a32,32,0,1,0,32,32A32,32,0,0,0,328,176Z" class="fa-primary"/></svg>',
+            '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 496 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8Zm80,168a32,32,0,1,1-32,32A32,32,0,0,1,328,176Zm-160,0a32,32,0,1,1-32,32A32,32,0,0,1,168,176ZM362.8,346.2a149.38,149.38,0,0,1-229.6,0c-13.6-16.3,11-36.7,24.6-20.5a117.5,117.5,0,0,0,180.4,0C351.6,309.5,376.3,329.9,362.8,346.2Z" class="fa-secondary"/><path d="M328,176a32,32,0,1,0,32,32A32,32,0,0,0,328,176Zm-160,0a32,32,0,1,0,32,32A32,32,0,0,0,168,176Z" class="fa-primary"/></svg>',
+            '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 496 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8ZM168,176a32,32,0,1,1-32,32A32,32,0,0,1,168,176ZM344,368H152c-21.2,0-21.2-32,0-32H344C365.2,336,365.2,368,344,368ZM328,240a32,32,0,1,1,32-32A32,32,0,0,1,328,240Z" class="fa-secondary"/><path d="M328,176a32,32,0,1,0,32,32A32,32,0,0,0,328,176Zm-160,0a32,32,0,1,0,32,32A32,32,0,0,0,168,176Z" class="fa-primary"/></svg>',
+            '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 496 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8ZM80,224a72,72,0,1,1,72,72,72,72,0,0,1-72-72ZM312,400H184c-21.2,0-21.2-32,0-32H312C333.2,368,333.2,400,312,400Zm32-104a72,72,0,1,1,72-72,72,72,0,0,1-72,72Z" class="fa-secondary"/><path d="M152,200a23.94,23.94,0,1,0,.12,0Zm192,0a23.94,23.94,0,1,0,.12,0Z" class="fa-primary"/></svg>',
+            '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 496 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8ZM136,208a32,32,0,1,1,32,32A32,32,0,0,1,136,208ZM248,416a64,64,0,1,1,64-64A64,64,0,0,1,248,416Zm80-176a32,32,0,1,1,32-32A32,32,0,0,1,328,240Z" class="fa-secondary"/><path d="M328,176a32,32,0,1,0,32,32A32,32,0,0,0,328,176Zm-160,0a32,32,0,1,0,32,32A32,32,0,0,0,168,176Z" class="fa-primary"/></svg>',
+            '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 496 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8Zm80,168a32,32,0,1,1-32,32A32,32,0,0,1,328,176Zm-160,0a32,32,0,1,1-32,32A32,32,0,0,1,168,176ZM338.2,394.2a117.5,117.5,0,0,0-180.4,0c-13.5,16.3-38.1-4.2-24.6-20.5a149.34,149.34,0,0,1,229.5.1C376.3,390,351.7,410.5,338.2,394.2Z" class="fa-secondary"/><path d="M168,176a32,32,0,1,0,32,32A32,32,0,0,0,168,176Zm160,0a32,32,0,1,0,32,32A32,32,0,0,0,328,176Z" class="fa-primary"/></svg>',
+            '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 496 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8Zm80,168a32,32,0,1,1-32,32A32,32,0,0,1,328,176ZM152,416c-26.5,0-48-21-48-47,0-20,28.5-60.4,41.6-77.8a8,8,0,0,1,11.2-1.6,7.58,7.58,0,0,1,1.6,1.6C171.5,308.6,200,349,200,369,200,395,178.5,416,152,416Zm16-176a32,32,0,1,1,32-32A32,32,0,0,1,168,240ZM338.2,394.2A117.35,117.35,0,0,0,248,352c-21.2,0-21.2-32,0-32a148.8,148.8,0,0,1,114.7,53.8c13.8,16.4-11.2,36.5-24.5,20.4Z" class="fa-secondary"/><path d="M328,176a32,32,0,1,0,32,32A32,32,0,0,0,328,176ZM145.6,291.2C132.5,308.6,104,349,104,369c0,26,21.5,47,48,47s48-21,48-47c0-20-28.5-60.4-41.6-77.8a8,8,0,0,0-11.2-1.6,7.58,7.58,0,0,0-1.6,1.6ZM168,176a32,32,0,1,0,32,32A32,32,0,0,0,168,176Z" class="fa-primary"/></svg>',
+            '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 496 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8ZM152,214.6l-28.7,28.7c-14.8,14.8-37.8-7.5-22.6-22.6L129.4,192l-28.7-28.7c-15-15,7.7-37.6,22.6-22.6L152,169.4l28.7-28.7c15-15,37.6,7.7,22.6,22.6L174.6,192l28.7,28.7c15.2,15.2-7.9,37.4-22.6,22.6ZM248,416a64,64,0,1,1,64-64A64,64,0,0,1,248,416ZM372.7,243.3,344,214.6l-28.7,28.7c-14.8,14.8-37.8-7.5-22.6-22.6L321.4,192l-28.7-28.7c-15-15,7.7-37.6,22.6-22.6L344,169.4l28.7-28.7c15-15,37.6,7.7,22.6,22.6L366.6,192l28.7,28.7C410.5,235.9,387.4,258.1,372.7,243.3Z" class="fa-secondary"/><path d="M395.3,220.7,366.6,192l28.7-28.7c15-14.9-7.6-37.6-22.6-22.6L344,169.4l-28.7-28.7c-14.9-15-37.6,7.6-22.6,22.6L321.4,192l-28.7,28.7c-15.2,15.1,7.8,37.4,22.6,22.6L344,214.6l28.7,28.7c14.7,14.8,37.8-7.4,22.6-22.6ZM174.6,192l28.7-28.7c15-14.9-7.6-37.6-22.6-22.6L152,169.4l-28.7-28.7c-14.9-15-37.6,7.6-22.6,22.6L129.4,192l-28.7,28.7c-15.2,15.1,7.8,37.4,22.6,22.6L152,214.6l28.7,28.7c14.7,14.8,37.8-7.4,22.6-22.6Z" class="fa-primary"/></svg>',
+            '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 496 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8ZM94.6,168.9l34.9-5L145,132.3a7.73,7.73,0,0,1,13.9,0l15.5,31.6,34.9,5a7.78,7.78,0,0,1,4.3,13.2l-25.4,24.6,6,34.9a7.48,7.48,0,0,1-11,7.9L152,233.3l-31.3,16.3a7.48,7.48,0,0,1-11-7.9l6-34.9L90.3,182.2a7.85,7.85,0,0,1,4.3-13.3ZM391.8,338.7c-9.3,55-83.2,93.3-143.8,93.3s-134.5-38.3-143.8-93.3a16.06,16.06,0,0,1,20.7-17.9C155.1,330.5,200,336,248,336s92.9-5.5,123.1-15.2a16,16,0,0,1,20.7,17.9Zm13.9-156.6-25.4,24.6,6,34.9a7.48,7.48,0,0,1-11,7.9L344,233.3l-31.3,16.3a7.48,7.48,0,0,1-11-7.9l6-34.9-25.4-24.6a7.81,7.81,0,0,1,4.3-13.2l34.9-5L337,132.4a7.73,7.73,0,0,1,13.9,0L366.4,164l34.9,5a7.7,7.7,0,0,1,4.4,13.1Z" class="fa-secondary"/><path d="M209.3,168.9l-34.9-5-15.5-31.6a7.73,7.73,0,0,0-13.9,0l-15.5,31.6-34.9,5a7.85,7.85,0,0,0-4.3,13.3l25.4,24.6-6,34.9a7.48,7.48,0,0,0,11,7.9L152,233.3l31.2,16.2a7.48,7.48,0,0,0,11-7.9l-6-34.9,25.4-24.6a7.78,7.78,0,0,0-4.3-13.2Zm192,.1-34.9-5-15.5-31.6a7.73,7.73,0,0,0-13.9,0L321.5,164l-34.9,5a7.81,7.81,0,0,0-6.47,8.95V178a7.92,7.92,0,0,0,2.16,4.24l25.4,24.6-6,34.9a7.48,7.48,0,0,0,11,7.9L344,233.3l31.3,16.2a7.48,7.48,0,0,0,11-7.9l-6-34.9,25.4-24.6a7.68,7.68,0,0,0-4.4-13.1Z" class="fa-primary"/></svg>'
+        ];
+
+        let html = document.documentElement,
+            theme = 0;
+
+        document.querySelector('#theme').addEventListener('click', () => {
+            if (theme) {
+                html.style.setProperty('--back-color', '#333');
+                html.style.setProperty('--text-color', '#fff');
+                theme = 0;
+            } else {
+                html.style.setProperty('--back-color', '#fff');
+                html.style.setProperty('--text-color', '#333');
+                theme = 1;
+            }
+        });
+
+        let randWord, wordShow, errorCount, checkboxes;
+        let en_alphabet = [
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+            'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        ];
+
+        document.addEventListener("DOMContentLoaded", langChoose);
+        let lang = document.querySelector('#lang');
+        let setLang = 'en';
+        lang.addEventListener('click', () => {
+            allButtons.remove();
+            setLang = 'en';
+            langChoose();
+        });
+
+        function langChoose() {
+            lang.innerText = setLang == 'en' ? 'en' : 'en';
+            let alphabet = setLang == 'en' ? en_alphabet : en_alphabet;
+            let wrapButt = document.querySelector('#buttons');
+            let label, input, div, div_wrap;
+            div_wrap = document.createElement('div');
+            for (let i of alphabet) {
+                label = document.createElement('label');
+                input = document.createElement('input');
+                input.setAttribute('type', 'checkbox');
+                input.setAttribute('name', i);
+                input.addEventListener('change', function() {
+                    if (this.checked) checkGuess(this.name, this);
+                });
+                div = document.createElement('div');
+                div.classList.add('check_text');
+                div.innerText = i;
+                label.appendChild(input);
+                label.appendChild(div);
+                div_wrap.id = 'allButtons';
+                div_wrap.appendChild(label);
+            }
+            wrapButt.appendChild(div_wrap);
+            startGame();
+        }
+
+        restart.addEventListener('click', startGame);
+
+        function startGame() {
+            open_wiki.disabled = 1;
+            allButtons.style.opacity = 1;
+            checkboxes = document.querySelectorAll('#allButtons input');
+            let isLang = setLang;
+            let arrWords = isLang == 'ru' ? ruWords : enWords;
+            randWord = arrWords[Math.floor(Math.random() * arrWords.length)].split('');
+            errorCount = 0;
+            checkboxes.forEach(i => {
+                i.checked = 0;
+                i.disabled = 0;
+                i.nextSibling.classList.remove('rigth', 'wrong');
+            });
+            errors(errorCount);
+            word.innerHTML = randWord.map((v, i, a) =>
+                i == 0 || i == a.length - 1 ?
+                `<span data-w="1">${v}</span>` : `<span data-w="0">_</span>`).
+            join ``;
+            gameScoreStart();
+            wikiApi(isLang, randWord);
+        }
+
+        function checkGuess(lett, elem) {
+            elem.disabled = 1;
+            let letter = lett;
+            wordShow = document.querySelectorAll('#word span');
+            let hiddenLetters = 0;
+
+            if (randWord.includes(letter)) {
+                for (let i = 0; i < randWord.length; i++) {
+                    if (window.CP.shouldStopExecution(0)) break;
+                    if (randWord[i] == letter) {
+                        wordShow[i].innerHTML = randWord[i];
+                        wordShow[i].dataset.w = 1;
+                    }
+                }
+                window.CP.exitedLoop(0);
+                elem.nextSibling.classList.add('rigth');
+            } else {
+                errors(++errorCount);
+                elem.nextSibling.classList.add('wrong');
+            }
+            for (let w of wordShow) {
+                if (w.dataset.w == 0) hiddenLetters++;
+            }
+            if (hiddenLetters == 0) {
+                error.innerText = 'Victory!';
+                gameWins(1);
+                smileFace(9);
+            }
+        }
+
+        function errors(err) {
+            if (err < 8) {
+                error.innerText = `${err} / 8`;
+                smileFace(err);
+            } else {
+                error.innerText = 'Game over!';
+                smileFace(8);
+                for (let i = 0; i < wordShow.length; i++) {
+                    if (window.CP.shouldStopExecution(1)) break;
+                    if (wordShow[i].dataset.w == 0) {
+                        wordShow[i].style.color = 'red';
+                        wordShow[i].innerText = randWord[i];
+                    }
+                }
+                window.CP.exitedLoop(1);
+                gameWins(0);
+            }
+        }
+
+        function smileFace(n) {
+            smile.innerHTML = SMILE[n];
+        }
+
+        let winsScore = 0,
+            totalGames = 0;
+
+        function gameScoreStart() {
+            wins_score.innerText = winsScore;
+            total_games.innerText = totalGames;
+        }
+
+        function gameWins(win) {
+            checkboxes.forEach(i => i.disabled = 1);
+            allButtons.style.opacity = .5;
+            open_wiki.disabled = 0;
+            if (win) wins_score.innerText = ++winsScore;
+            total_games.innerText = ++totalGames;
+        }
+        clear_score.addEventListener('click', () => {
+            winsScore = 0;
+            totalGames = 0;
+            wins_score.innerText = 0;
+            total_games.innerText = 0;
+        });
+
+        let title = document.querySelector('#title');
+        let extract = document.querySelector('#extract');
+        let thumbnail = document.querySelector('#thumbnail');
+        let link = document.querySelector('#link-to-w');
+
+        function wikiApi(lang, word) {
+            let query = `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${word.join('')}`;
+            fetch(query).
+            then(response => response.json()).
+            then(w => {
+                title.innerText = w.title;
+                extract.innerHTML = w.extract_html ? w.extract_html : '';
+                thumbnail.src = w.thumbnail ? w.thumbnail.source : '';
+                link.href = w.content_urls ? w.content_urls.desktop.page : '';
+                link.innerText = w.content_urls ? 'Go to Wiki...' : '';
+                open_wiki.innerText = w.content_urls ? 'what is it?' : 'wiki doesn\'t know';
+            }).
+            catch(error => console.log(error));
+        }
+
+        open_wiki.addEventListener('click', modal);
+        close_mod.addEventListener('click', modal);
+
+        function modal() {
+            modal_wrap.classList.toggle('modal_open');
+        };
+        //# sourceURL=pen.js
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+    body {
+        background-repeat: no-repeat;
+        background-size: 36%;
+        background-position: right 600px top 370px;
+        color: #1C5188;
+        background: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+        font-family: 'Lato', sans-serif;
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    #characteristic {
+        margin: auto;
+        width: 60%;
+        color: orange;
+        padding: 21px;
+    }
+    
+    #animated {
+        animation-name: move;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        cursor: url("http://downloads.totallyfreecursors.com/cursor_files/gold_star.ani"), url("http://downloads.totallyfreecursors.com/thumbnails/gold_star.gif"), auto;
+    }
+    
+    #space {
+        font-size: 25px;
+    }
+    
+    a.button {
+        background: linear-gradient(45deg, rgba(255, 184, 115, 0.65) 0%, rgba(255, 124, 189, 0.65) 50%, rgba(108, 0, 153, 0.65) 100%);
+        border-radius: 7px;
+        margin-bottom: 70px;
+        box-shadow: 0px 2px 4px rgba(34, 62, 66, .25);
+        color: purple;
+        font-size: 20px;
+        letter-spacing: 2px;
+        padding: 6px 22px;
+        text-decoration: none;
+        -webkit-transition: box-shadow 1s ease;
+        transition: box-shadow 1s ease;
+    }
+    
+    button:hover {
+        box-shadow: 0px 4px 4px rgba(33, 62, 66, .5);
+        -webkit-transition: box-shadow 1s ease;
+        transition: box-shadow 1s ease;
+    }
+    /************ Square *************/
+    
+    .square {
+        transition: 1s;
+        margin-left: -1000px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border: 5px solid #000;
+        letter-spacing: normal;
+        line-height: normal;
+        /* Color & Background */
+        color: rgb(0, 0, 0);
+        /* Box */
+        height: 50px;
+        width: 50px;
+        /* Positioning */
+        position: relative;
+        /* Effects */
+        transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+        transition: transform 0.4s ease-in-out 0s;
+        box-sizing: content-box;
+        border-radius: 10px;
+    }
+    
+    .square:hover {
+        transition: 0.5s;
+        transform: rotate(-180deg);
+    }
+    
+    @media screen and (max-width: 736px) {
+        .square {
+            margin-left: -250px;
+            margin-bottom: 20px;
+        }
+    }
+    
+    .logo-text {
+        text-align: center;
+        font-size: 25px;
+        letter-spacing: normal;
+        /* Positioning */
+        position: absolute;
+        top: 25px;
+        bottom: 10.7778px;
+        right: 5.29167px;
+        left: 25px;
+        float: none;
+        display: block;
+        clear: none;
+        z-index: auto;
+        /* Effects */
+        transform: matrix(6.12323e-17, 1, -1, 6.12323e-17, -9.77778, -7.11111);
+        transition: transform 0.4s ease-in-out 0s;
+    }

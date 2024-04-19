@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <title>Typing Test!</title>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+    <link rel="icon" href="/images/mylogo.png">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+        @import url("https://fonts.googleapis.com/css?family=Lobster");
+        @import url("https://fonts.googleapis.com/css?family=Concert+One");
+        body {
+            margin: 0;
+            background: #F7F8FA;
+        }
+        
+        .flash {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 9;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .error {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: red;
+            z-index: 8;
+            opacity: 0;
+            pointer-events: none;
+        }
+        /* Main Menu */
+        
+        #menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #menu .title {
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+            font-size: 10vw;
+            color: black;
+            text-shadow: 1px 1px #FA6900, 2px 2px #FA6900, 3px 3px #FA6900, 4px 4px #FA6900, 5px 5px #FA6900;
+            margin-bottom: 50px;
+        }
+        
+        #play {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #play .quote,
+        #play .input,
+        #play .width-test {
+            font-family: Roboto Mono;
+            font-size: 35px;
+            color: black;
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            top: 25%;
+            transition: width 1s;
+        }
+        
+        #play .quote .word,
+        #play .input .word,
+        #play .width-test .word {
+            overflow: hidden;
+        }
+        
+        #play .strip {
+            position: absolute;
+            top: 20%;
+            height: 25%;
+            left: 0;
+            width: 100%;
+            background: #69D2E7;
+            opacity: 0.5;
+        }
+        
+        #play .width-test {
+            opacity: 0;
+            width: auto;
+        }
+        
+        #play .input {
+            position: relative;
+            color: blue;
+            z-index: 5;
+        }
+        
+        #win {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #win .title {
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+            font-size: 100px;
+            text-align: center;
+            padding: 25px 0px;
+            color: black;
+            text-shadow: 1px 1px #FA6900, 2px 2px #FA6900, 3px 3px #FA6900, 4px 4px #FA6900, 5px 5px #FA6900, 6px 6px #FA6900;
+        }
+        
+        #win .stat-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        #win .stat-container .stat {
+            display: flex;
+            justify-content: space-between;
+            font-family: Concert One;
+            color: black;
+            font-size: 45px;
+            width: 80%;
+            margin: auto;
+            /* text-shadow: 1px 1px RGB(120, 124, 162), 2px 2px RGB(120, 124, 162), 3px 3px RGB(120, 124, 162); */
+        }
+        
+        #win .button-container {
+            position: absolute;
+            bottom: 20%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .button {
+            position: relative;
+            font-family: Concert One;
+            font-size: 5vw;
+            color: white;
+            background: #FA6900;
+            padding: 5px 25px;
+            border-radius: 7px;
+            box-shadow: 0px 10px RGB(200, 50, 0);
+            transition: 0.2s;
+            top: 0px;
+            display: inline;
+        }
+        
+        .button:hover {
+            cursor: pointer;
+            top: 6px;
+            box-shadow: 0px 5px RGB(200, 50, 0);
+        }
+        
+        @keyframes titleAnim {
+            0% {
+                transform-origin: 50% 50%;
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .title {
+            animation-name: titleAnim;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: cubic-bezier(0.22, 0.135, 0.08, 1.35);
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no">
+    <div class='flash'></div>
+    <div class='error'></div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script id="rendered-js">
+        // The "Play" (game) class
+        class Play {
+            constructor() {
+                this.currentWord = 0;
+                this.currentLetter = 0;
+                this.timer = 0;
+                setInterval(function() {
+                    this.timer++;
+                }.bind(this), 1);
+
+                this.listen();
+            }
+
+            // Create the state
+            create(parent) {
+                this.mistakes = 0;
+                $('body').append(`
+      <div id="play">
+        <div class='strip'></div>
+        <div class='width-test'></div>
+        <div class='quote'></div>
+        <div class='input'></div>
+      </div>
+    `);
+                this.timer = 0;
+                this.currentWord = 0;
+                this.currentLetter = 0;
+                this.injectQuote();
+                this.parent = parent;
+            }
+
+            // inject the quote
+            injectQuote() {
+                var quote = quotes[Math.floor(getRandom(0, quotes.length))];
+                var words = [];
+                var currentWord = 0;
+
+                this.totalLetters = quote.length;
+
+                for (var i = 0; i < quote.length; i++) {
+                    var letter = quote.charAt(i);
+
+                    // End of a word
+                    if (letter === " ") {
+                        words[currentWord].push("&nbsp;");
+                        currentWord++;
+                    } else {
+                        // Create the word
+                        if (!words[currentWord]) {
+                            words[currentWord] = [];
+                        }
+
+                        // Add the letter
+                        words[currentWord].push(letter);
+                    }
+                }
+                this.wordCount = words.length;
+                for (var i = 0; i < words.length; i++) {
+                    var quoteWord = $("<div class='word'>" + words[i].join('') + "</div>");
+                    var inputWord = $(`<div class='word'>${words[i].join('')}</div>`);
+                    $('.quote').append(quoteWord);
+                    $('.input').append(inputWord);
+                    $('.input .word').css('width', '0px');
+                }
+            }
+
+            // Listen for keypresses
+            listen() {
+                $(window).on('keypress', function(e) {
+                    var c = String.fromCharCode(e.which);
+                    var word = $(`.quote .word:eq(${this.currentWord})`);
+                    var letter = word.html().charAt(this.currentLetter);
+
+                    if (c === letter || c == " " && letter == "&") {
+                        var inputWord = $(`.input .word:eq(${this.currentWord})`);
+                        var newWidth;
+
+                        // Get the new width
+                        $('.width-test').html(inputWord.html().substring(0, this.currentLetter + 1));
+                        inputWord.css('width', $('.width-test').innerWidth());
+
+                        // Increment
+                        if (letter == "&") {
+                            this.currentLetter += 6;
+                        } else {
+                            this.currentLetter++;
+                        }
+
+                        // Going on to the next word
+                        if (this.currentLetter >= word.html().length) {
+                            this.currentWord++;
+                            this.currentLetter = 0;
+
+                            if (this.currentWord >= this.wordCount) {
+                                this.parent.setState('win', {
+                                    mistakes: this.mistakes,
+                                    time: this.timer,
+                                    totalLength: this.totalLetters
+                                });
+                            }
+                        }
+                    } else {
+                        this.miss();
+                    }
+                }.bind(this));
+            }
+
+            // Hitting the wrong key
+            miss() {
+                $('.error').animate({
+                    opacity: 0.5
+                }, {
+                    queue: false,
+                    duration: 25,
+                    easing: 'linear',
+                    complete: function() {
+                        $('.error').animate({
+                            opacity: 0
+                        }, {
+                            queue: false,
+                            duration: 25,
+                            easing: 'linear'
+                        });
+                    }
+                });
+                this.mistakes++;
+            }
+
+            // Destroy the state
+            destroy() {
+                $('#play').remove();
+            }
+        }
+
+
+        // The Main, highest-level class
+        class Main {
+            constructor() {
+                this.setState('menu');
+            }
+
+            // Set a state
+            setState(name, flags) {
+                var flash = $('.flash');
+                var flags = flags || {};
+
+                if (this.state) {
+                    // Start the flash
+                    flash.animate({
+                        opacity: 1
+                    }, {
+                        queue: false,
+                        duration: 250,
+                        complete: function() {
+
+                            // Destroy the current state
+                            states[this.state].destroy();
+
+                            // Create the new state
+                            this.state = name;
+                            states[this.state].create(this, flags);
+
+                            // Fade it out
+                            flash.animate({
+                                opacity: 0
+                            }, {
+                                queue: false,
+                                duration: 250
+                            });
+                        }.bind(this)
+                    });
+                } else {
+                    this.state = name;
+                    states[this.state].create(this, flags);
+                }
+            }
+        }
+
+
+        // The states of the "game" (u think this is a game???)
+        var states = [];
+        states['menu'] = { // The main menu
+            create: function(_self) {
+                $('body').append(`
+      <div id="menu">
+        <div class='title'>Typing Test!</div>
+        <div class='button-container'>
+          <div class='button'>Start</div>
+        </div>
+      </div>
+    `);
+
+                $('.button').on('click', function() {
+                    _self.setState('playing');
+                });
+            },
+            destroy: function() {
+                $('#menu').remove();
+            }
+        };
+
+        states['playing'] = new Play();
+        states['win'] = {
+            create: function(_self, flags) {
+                var time = flags.time || 0;
+                var mistakes = flags.mistakes || 0;
+                var wpm = flags.totalLength / 3 / millisToMinutesAndSeconds(flags.time);
+
+                $('body').append(`
+      <div id="win">
+        <div class='title'>Good Job!</div>
+        <div class='stat-container'>
+          <div class='stat'>
+            <div class='name'>Time:</div>
+            <div class='value'>${time / 100} Seconds</div>
+          </div>
+          <div class='stat'>
+            <div class='name'>Mistakes:</div>
+            <div class='value'>${mistakes}</div>
+          </div>
+           <div class='stat'>
+            <div class='name'>Words Per Minute:</div>
+            <div class='value'>${Math.floor(wpm)}</div>
+          </div>
+        </div>
+        
+        <div class='button-container'>
+          <div class='button'>Retry</div>
+        </div>
+      </div>
+    `);
+                $('.button').on('click', function() {
+                    _self.setState('playing');
+                }.bind(_self));
+            },
+            destroy: function() {
+                $('#win').remove();
+            }
+        };
+
+
+
+        // Start it up!
+        new Main();
+
+
+
+
+        // Quotes
+        var quotes = [
+            `Each morning when I open my eyes I say to myself: I, not events, have the power to make me happy or unhappy today. I can choose which it shall be. Yesterday is dead, tomorrow hasn’t arrived yet. I have just one day, today, and I’m going to be happy in it.`,
+            `Life is full of beauty. Notice it. Notice the bumble bee, the small child, and the smiling faces. Smell the rain, and feel the wind. Live your life to the fullest potential, and fight for your dreams.`,
+            `When you start to do the things that you truly love, it wouldn’t matter whether it is Monday or Friday; you would be so excited to wake up each morning to work on your passions.`,
+            `If you don't design your own life plan, chances are you'll fall into someone else's plan. And guess what they have planned for you? Not much.`,
+            `One of the best pieces of advice I ever got was from a horse master. He told me to go slow to go fast. I think that applies to everything in life. We live as though there aren't enough hours in the day but if we do each thing calmly and carefully we will get it done quicker and with much less stress.`,
+            `Success means doing the best we can with what we have. Success is the doing, not the getting; in the trying, not the triumph. Success is a personal standard, reaching for the highest that is in us, becoming all that we can be.`,
+            `We can easily manage if we will only take, each day, the burden appointed to it. But the load will be too heavy for us if we carry yesterday’s burden over again today, and then add the burden of the morrow before we are required to bear it.`,
+            `The truth is that our finest moments are most likely to occur when we are feeling deeply uncomfortable, unhappy, or unfulfilled. For it is only in such moments, propelled by our discomfort, that we are likely to step out of our ruts and start searching for different ways or truer answers.`,
+            `Dreams can come true, but there is a secret. They're realized through the magic of persistence, determination, commitment, passion, practice, focus and hard work. They happen a step at a time, manifested over years, not weeks.`,
+            `Watch your thoughts; they become words. Watch your words; they become actions. Watch your actions; they become habits. Watch your habits; they become character. Watch your character; it becomes your destiny.`,
+            `When I was 5 years old, my mother always told me that happiness was the key to life.  When I went to school, they asked me what I wanted to be when I grew up.  I wrote down ‘happy’.  They told me I didn’t understand the assignment, and I told them they didn’t understand life.`,
+            `When we love, we always strive to become better than we are. When we strive to become better than we are, everything around us becomes better too.`,
+            `Everything tells me that I am about to make a wrong decision, but making mistakes is just part of life. What does the world want of me? Does it want me to take no risks, to go back to where I came from because I didn't have the courage to say "yes" to life?`
+        ];
+
+
+
+        // Get a random number
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+
+        function millisToMinutesAndSeconds(millis) {
+            var minutes = millis / 60000;
+            return 1 + minutes;
+        }
+        //# sourceURL=pen.js
+    </script>
+
+
+
+</body>
+
+</html>

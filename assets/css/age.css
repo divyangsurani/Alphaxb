@@ -1,0 +1,202 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F7F8FA;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+p {
+    margin: 0 0 2em 0;
+}
+
+
+/************ Square *************/
+
+.square {
+    transition: 1s;
+    margin-left: 90px;
+    margin-top: 100px;
+    border: 5px solid #000;
+    letter-spacing: normal;
+    line-height: normal;
+    /* Color & Background */
+    color: rgb(0, 0, 0);
+    /* Box */
+    height: 50px;
+    width: 50px;
+    /* Positioning */
+    position: relative;
+    /* Effects */
+    transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+    transition: transform 0.4s ease-in-out 0s;
+    box-sizing: content-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transform: rotate(0deg);
+}
+
+.square:hover {
+    transition: 0.5s;
+    transform: rotate(-180deg);
+}
+
+.logo-text {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: normal;
+    /* Positioning */
+    position: absolute;
+    top: 25px;
+    bottom: 10.7778px;
+    right: 5.29167px;
+    left: 25px;
+    float: none;
+    display: block;
+    clear: none;
+    z-index: auto;
+    /* Effects */
+    transform: matrix(6.12323e-17, 1, -1, 6.12323e-17, -9.77778, -7.11111);
+    transition: transform 0.4s ease-in-out 0s;
+}
+
+.container {
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    padding: 50px 30px;
+}
+
+.container * {
+    font-family: "Poppins", sans-serif;
+    border: none;
+    outline: none;
+}
+
+#AppName {
+    color: whitesmoke;
+    font-family: Arial, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+}
+
+.AppVersion {
+    font-size: 15px;
+    text-shadow: none;
+}
+
+p {
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+#AppBody {
+    width: 350px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px auto;
+    padding: 10% 20px 20px 20px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 35, 102, 0.2);
+}
+
+#birthdate {
+    height: 30px;
+    width: 180px;
+    font-size: 18px;
+    padding-left: 10px;
+    margin-left: 0px;
+}
+
+#text01 {
+    margin-left: 15px;
+}
+
+.to-date {
+    letter-spacing: 1px;
+}
+
+#currentdate {
+    height: 30px;
+    width: 180px;
+    font-size: 18px;
+    margin-right: -18px;
+    padding-left: 10px;
+}
+
+#CalButton {
+    background-color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 30px;
+}
+
+#CalButton:hover {
+    transition: 0.5s all ease-in-out;
+    background-color: #4169e1;
+}
+
+#showAge {
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 50px;
+}
+
+#maker {
+    cursor: pointer;
+    color: black;
+    border-radius: 10px;
+}
+
+#ShowTheMaker {
+    color: black;
+    font-size: 12px;
+    margin-top: 0px;
+    font-weight: normal;
+}
+
+p {
+    font-size: 14px;
+    color: #707070;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 736px) {
+    .square {
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+    .container {
+        width: 100%;
+        margin-top: 20%;
+    }
+    button {
+        width: 32%;
+    }
+    input {
+        width: 66%;
+    }
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Games</title>
+    <link rel="icon" href="images/mylogo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+    <style>
+        /************ Square *************/
+        
+        .square {
+            transition: 1s;
+            height: 65px;
+            width: 70px;
+            border: 5px solid #000;
+            letter-spacing: normal;
+            line-height: normal;
+            /* Color & Background */
+            color: rgb(0, 0, 0);
+            /* Box */
+            height: 50px;
+            width: 50px;
+            /* Positioning */
+            position: relative;
+            /* Effects */
+            transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+            transition: transform 0.4s ease-in-out 0s;
+            box-sizing: content-box;
+            border-radius: 10px;
+            transform: rotate(0deg);
+            -webkit-user-drag: none;
+        }
+        
+        .square:hover {
+            transition: 1s;
+            transform: rotate(-180deg);
+        }
+
+        
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: fixed;
+            background-attachment: fixed;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="is-preload" style="background-image: url('images/background.jpg');">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <a href="/" style="border-bottom: none;"><img class="square" src="images/JA.png"></a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="about">About Us</a></li>
+                <li><a href="contact">Contact Us</a></li>
+                <li><a href="privacypolicy">Privacy Policy</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <header>
+                    <!-- <h1>Play!!</h1>
+                    <p><b>Cube Smasher, Blackjack, Chess and more!</b></p> -->
+
+                    <h1>Play
+                        <a style="text-decoration: none; color: #FFCD00;" class="typewrite" data-period="2000" data-type='[ "Cube Smasher", "Blackjack", "Chess", "Hangman", "Tic-Tac-Toe", "Tower Blocks", "Planet Defence", "Memory Game", "Classic Sudoku", "Classic 2048" ]'>
+                            <span class="wrap"></span>
+                        </a>
+                    </h1>
+
+                </header>
+                <section class="tiles">
+                    <article class="style1">
+                        <span class="image">
+                                    <img src="images/box.png" alt="Cube Smasher" loading="lazy" />
+                                </span>
+                        <a href="games/box">
+                            <h2>Cube Smasher</h2>
+                            <div class="content">
+                                <p>Slash the boxes</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style2">
+                        <span class="image">
+                                    <img src="images/blackjack.png" alt="Blackjack" loading="lazy" />
+                                </span>
+                        <a href="games/blackjack">
+                            <h2>Blackjack</h2>
+                            <div class="content">
+                                <p>Play online Blackjack!</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style3">
+                        <span class="image">
+                                    <img src="images/chess.png" alt="Chess" loading="lazy" />
+                                </span>
+                        <a href="games/chess">
+                            <h2>Chess</h2>
+                            <div class="content">
+                                <p>Play chess with your friend or AI</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style4">
+                        <span class="image">
+                                    <img src="images/hangman.png" alt="Hangman" loading="lazy" />
+                                </span>
+                        <a href="games/hangman">
+                            <h2>Hangman</h2>
+                            <div class="content">
+                                <p>Childhood paper game</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style5">
+                        <span class="image">
+                                    <img src="images/tictactoe.png" alt="TicTacToe" loading="lazy" />
+                                </span>
+                        <a href="games/tictactoe">
+                            <h2>Tic Tac Toe</h2>
+                            <div class="content">
+                                <p>Play the classic Tic-Tac-Toe game for free online</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style6">
+                        <span class="image">
+                                    <img src="images/towerblocks.png" alt="Tower Blocks" loading="lazy" />
+                                </span>
+                        <a href="games/tower">
+                            <h2>Tower Blocks</h2>
+                            <div class="content">
+                                <p>How much can you score?</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style2">
+                        <span class="image">
+                                    <img src="images/rocket.png" alt="Planet Defence" loading="lazy" />
+                                </span>
+                        <a href="games/planet">
+                            <h2>Planet Defence</h2>
+                            <div class="content">
+                                <p>Protect the planet</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style3">
+                        <span class="image">
+                                    <img src="images/memory.png" alt="Memory Game" loading="lazy" />
+                                </span>
+                        <a href="games/memory">
+                            <h2>Memory Game</h2>
+                            <div class="content">
+                                <p>How good is your memory?</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style1">
+                        <span class="image">
+                                    <img src="images/sudoku.png" alt="Classic Sudoku" loading="lazy" />
+                                </span>
+                        <a href="games/csudoku">
+                            <h2>Classic Sudoku</h2>
+                            <div class="content">
+                                <p>Do you remember playing Sudoku when you were a child?</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style2">
+                        <span class="image">
+                                    <img src="images/2048.png" alt="Classic 2048" loading="lazy" />
+                                </span>
+                        <a href="games/2048">
+                            <h2>Classic 2048</h2>
+                            <div class="content">
+                                <p>Join the tiles, get to 2048</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style3">
+                        <span class="image">
+                            <img src="images/coloron.png" alt="Coloron" loading="lazy" />
+                        </span>
+                        <a href="games/coloron">
+                            <h2>Coloron Game</h2>
+                            <div class="content">
+                                <p>Match the colors</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style1">
+                        <span class="image">
+                            <img src="images/snake.jpg" alt="Classic Snake" loading="lazy" />
+                        </span>
+                        <a href="games/snake">
+                            <h2>Snake</h2>
+                            <div class="content">
+                                <p>Play the childhood game!</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style2">
+                        <span class="image">
+                            <img src="images/adarkroom.jpg" alt="A Dark Room" loading="lazy" />
+                        </span>
+                        <a href="games/adarkroom/">
+                            <h2>A Dark Room</h2>
+                            <div class="content">
+                                <p>Good luck on your text adventure!</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style3">
+                        <span class="image">
+                            <img src="images/zombie.jpg" alt="A Dark Room" loading="lazy" />
+                        </span>
+                        <a href="games/zombie">
+                            <h2>Zombie Mayhem</h2>
+                            <div class="content">
+                                <p>Dive into chaos and survival in this intense zombie-themed game</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style1">
+                        <span class="image">
+                            <img src="images/hexagon.jpg" alt="Hextris" loading="lazy" />
+                        </span>
+                        <a href="games/hextris/">
+                            <h2>Hextris</h2>
+                            <div class="content">
+                                <p>An addictive puzzle game inspired by Tetris.</p>
+                            </div>
+                        </a>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer" style="color: black; background-color: #3eb240;">
+            <div class="inner">
+                <section>
+                    <h2>Follow Us</h2>
+                    <ul class="icons">
+                        <li><a style="border: 1px solid black;" href="https://twitter.com/JalishMahmud" target="_blank" class="icon brands style2 fa-brands fa-x-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a style="border: 1px solid black;" href="https://www.facebook.com/jalishmahmudsujon" target="_blank" class="icon brands style2 fa-brands fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a style="border: 1px solid black;" rel="me" href="https://mastodon.social/@Vucko130" target="_blank" class="icon brands style2 fa-brands fa-mastodon"><span class="label">Mastodon</span></a></li>
+						<li><a style="border: 1px solid black;" href="https://github.com/Viperz75" target="_blank" class="icon brands style2 fa-brands fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a style="border: 1px solid black;" href="mailto:support@thepuzzles.eu.org" class="icon solid style2 fa-solid fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                </section>
+                <ul class="copyright" style="color:#000">
+                    <li>Copyright © <span id="copyrightYear"></span> AlphaXB Tech</li>
+                    <script>
+                    var copyrightYear = new Date().getFullYear();
+                    document.getElementById("copyrightYear").innerHTML = copyrightYear;
+                    </script>
+                    <li>Developed By: <a href="https://www.akashmahmud.eu.org" target="_blank">Niaz Mahmud Akash</a></li>
+                    <li><a href="privacypolicy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) {
+                delta /= 2;
+            }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function() {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+    </script>
+    <script defer src="assets/js/jquery.min.js"></script>
+    <script defer src="assets/js/browser.min.js"></script>
+    <script defer src="assets/js/breakpoints.min.js"></script>
+    <script defer src="assets/js/util.js"></script>
+    <script defer src="assets/js/main.js"></script>
+
+</body>
+
+</html>

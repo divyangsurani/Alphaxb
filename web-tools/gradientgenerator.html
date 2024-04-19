@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Generator</title>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="/assets/css/gradient.css">
+    <link rel="stylesheet" href="/assets/css/nav.css">
+    <link rel="icon" href="/images/mylogo.png">
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <!-- <a href="/" class="logo">
+                    <div class="square">
+                        <center><span class="logo-text"><b>JA</b></span></center>
+                    </div>
+                </a> -->
+                <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/privacypolicy">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="colors">
+                <input type="color" id="color-a" value="#1488cc">
+                <input type="color" id="color-b" value="#2b32b2">
+            </div>
+            <div class="buttons">
+                <button onclick="setDirection('to top',this)">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+                <button class="active" onclick="setDirection('to bottom',this)">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+                <button onclick="setDirection('to right',this)">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+                <button onclick="setDirection('to left',this)">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+                <button class="rotate-icon" onclick="setDirection('to top right',this)">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+                <button class="rotate-icon" onclick="setDirection('to bottom left',this)">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+                <button class="rotate-icon" onclick="setDirection('to bottom right',this)">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+                <button class="rotate-icon" onclick="setDirection('to top left',this)">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            </div>
+            <button id="submit" onclick="generateCode()">Generate</button>
+            <div class="output">
+                <textarea id="code" rows="2"></textarea>
+                <button id="copy" onclick="copyText()">Copy</button>
+            </div>
+        </div>
+    </div>
+    <!--Script-->
+    <script defer src="/assets/js/gradient.js"></script>
+    <script defer src="/assets/js/jquery.min.js"></script>
+    <script defer src="/assets/js/browser.min.js"></script>
+    <script defer src="/assets/js/breakpoints.min.js"></script>
+    <script defer src="/assets/js/util.js"></script>
+    <script defer src="/assets/js/main.js"></script>
+</body>
+
+</html>

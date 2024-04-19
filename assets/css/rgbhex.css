@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    background-color: #F7F8FA;
+}
+
+p {
+    margin: 0 0 2em 0;
+}
+
+
+/************ Square *************/
+
+.square {
+    transition: 1s;
+    margin-left: 90px;
+    margin-top: 100px;
+    border: 5px solid #000;
+    letter-spacing: normal;
+    line-height: normal;
+    /* Color & Background */
+    color: rgb(0, 0, 0);
+    /* Box */
+    height: 50px;
+    width: 50px;
+    /* Positioning */
+    position: relative;
+    /* Effects */
+    transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+    transition: transform 0.4s ease-in-out 0s;
+    box-sizing: content-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.square:hover {
+    transition: 0.5s;
+    transform: rotate(-180deg);
+}
+
+.logo-text {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: normal;
+    /* Positioning */
+    position: absolute;
+    top: 25px;
+    bottom: 10.7778px;
+    right: 5.29167px;
+    left: 25px;
+    float: none;
+    display: block;
+    clear: none;
+    z-index: auto;
+    /* Effects */
+    transform: matrix(6.12323e-17, 1, -1, 6.12323e-17, -9.77778, -7.11111);
+    transition: transform 0.4s ease-in-out 0s;
+}
+
+.container {
+    background-color: #F7F8FA;
+    width: 80vmin;
+    min-width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 50px 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 0px 4px 8px 0px rgb(0, 35, 102, 0.2);
+}
+
+.wrapper {
+    width: 230px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 5px 0;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #404050;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 736px) {
+    .square {
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+    .container {
+        margin-top: 20%;
+    }
+    input {
+        font-size: 17px;
+    }
+}

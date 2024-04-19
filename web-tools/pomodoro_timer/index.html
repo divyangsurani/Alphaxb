@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="pomodoro.css">
+    <link rel="stylesheet" href="/assets/css/nav.css">
+    <link rel="icon" href="/images/mylogo.png">
+	<script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+	
+</head>
+<body>
+  <div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <!-- <a href="/" class="logo">
+                <div class="square">
+                    <center><span class="logo-text"><b>JA</b></span></center>
+                </div>
+            </a> -->
+            <!-- <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a> -->
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <!-- Menu -->
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul style="font-weight: normal;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/privacypolicy">Privacy Policy</a></li>
+        </ul>
+    </nav>
+</div>
+  <div class="container">
+    <!-- <h1 class="title">Pomodoro Timer</h1> -->
+
+    <div class="card">
+    
+    <div class="timer">
+      <center>
+      <div class="timer-display">
+        <span id="timer-minutes">25</span>:<span id="timer-seconds">00</span>
+      </div></center>
+      <div class="timer-buttons">
+        <button id="timer-start" class="buttons"><i class="fa fa-play"></i></button>
+        <button id="timer-pause" class="buttons button-secondary" hidden><i class="fa fa-pause" aria-hidden="true"></i></button>
+        <button id="timer-resume" class="buttons button-secondary" hidden><i class="fa fa-play"></i></button>
+        <button id="timer-restart" class="buttons button-secondary" hidden><i class="fa fa-undo"></i></button>
+      </div>
+      <div class="timer-settings">
+        <div class="setting">
+          <label for="work-time">Session (min):</label><br><br>
+          <button class="buttons"><i class="fa fa-minus" ></i></button><input type="number" id="work-time" min="1" max="60" value="25" /><button class="buttons"><i class="fa fa-plus"></i></button>
+        </div>
+        <div class="setting">
+          <label for="short-break-time">Short Break (min):</label><br><br>
+          <button class="buttons"><i class="fa fa-minus"></i></button><input type="number" id="short-break-time" min="1" max="60" value="5" /><button class="buttons"><i class="fa fa-plus"></i></button>
+        </div>
+        <div class="setting">
+          <label for="long-break-time">Long Break (min):</label><br><br>
+          <button class="buttons"><i class="fa fa-minus"></i></button><input type="number" id="long-break-time" min="1" max="60" value="15" /><button class="buttons"><i class="fa fa-plus"></i></button>
+        </div>
+      </div>
+      <div class="dark-mode-toggle">
+        <label for="dark-mode-switch">Dark Mode:</label>
+        <div class="toggle-switch">
+          <input type="checkbox" id="dark-mode-switch" />
+          <span class="toggle-slider"></span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <span><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/034hV74Z4i9uk6SfdfV0G2?utm_source=generator&theme=0" width="25%" height="150" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></body>
+<script src="pomodoro.js"></script>
+<script src="settings.js"></script>
+<script defer src="/assets/js/jquery.min.js"></script>
+<script defer src="/assets/js/browser.min.js"></script>
+<script defer src="/assets/js/breakpoints.min.js"></script>
+<script defer src="/assets/js/util.js"></script>
+<script defer src="/assets/js/main.js"></script>
+
+</html>

@@ -1,0 +1,192 @@
+* {
+   box-sizing: border-box;
+}
+body {
+   color: #333;
+   font-family: "Roboto", sans-serif;
+   display: flex;
+   justify-content: space-around;
+   flex-flow: row wrap;
+   align-items: stretch;
+}
+header {
+   /* background-color: lightgray; */
+   /*    border: 2px black outset; */
+   padding: 15px;
+   width: 100%;
+   margin-top: -10px;
+   margin-bottom: 10px;
+}
+h1 {
+   font-family: "Roboto";
+   font-size: 3rem;
+   text-align: center;
+}
+main {
+   padding: 5px 10px 5px 25px;
+}
+.col-sm-4 .col-sm-8 {
+   /* overflow-wrap: break-word; */
+}
+.panel-heading {
+}
+#switch1 {
+   background: blue;
+   color: white;
+}
+#switch2 {
+   background: green;
+   color: white;
+}
+#switch3 {
+   background: goldenrod;
+   color: white;
+}
+#switch4 {
+   background: red;
+   color: white;
+}
+#switch5 {
+   background: darkred;
+   color: white;
+}
+.panel-body {
+   color: #333;
+   background-color: white;
+/*    max-height: 0; */
+   overflow: hidden;
+   transition: max-height 0.2s ease-out;
+/*    margin-bottom: 20x; */
+}
+.btn.btn-default {
+   display: inline;
+   border: none;
+   cursor: pointer;
+   padding: 4px;
+   transition: 0.4s;
+}
+/* .btn.btn-default:hover {
+   display: inline;
+   border: none;
+   background-color: lightgray;
+   color: white;
+} */
+.panel-group {
+   overflow-wrap: break-word;
+}
+#switch-Fours.panel-group .btn.btn-default {
+   border: 1px solid darkred;
+}
+#switch-Fours.panel-group .btn.btn-default:hover {
+   background-color: #ef9b9b;
+   color: black;
+}
+#switch-Fours.panel-group .btn btn-default:focus {
+   outline: red;
+}
+#switch-twos.panel-group .btn.btn-default {
+   border: 1px solid green;
+}
+#switch-twos.panel-group .btn.btn-default:hover {
+   background-color: #96ff86;
+   color: black;
+}
+#switch-twos.panel-group .btn btn-default:focus {
+   outline: green;
+}
+#switch-threes.panel-group .btn.btn-default {
+   border: 1px solid gold;
+}
+#switch-threes.panel-group .btn.btn-default:hover {
+   background-color: #f2db9d;
+   color: black;
+}
+#switch-threes.panel-group .btn btn-default:focus {
+   outline: gold;
+}
+#switch-fours.panel-group .btn.btn-default {
+   border: 1px solid red;
+}
+#switch-fours.panel-group .btn.btn-default:hover {
+   background-color:#f75656;
+   color: black;
+}
+#switch-fours.panel-group .btn btn-default:focus {
+   outline: red;
+}
+#switch-fives.panel-group .btn.btn-default {
+   border: 1px solid blue;
+}
+#switch-fives.panel-group .btn.btn-default:hover {
+   background-color: #82c4e0;
+   color: black;
+}
+#switch-fives.panel-group .btn btn-default:focus {
+   outline: blue;
+}
+p#left-foot.footy a, a:hover {
+  text-decoration: none;
+  color: darkmagenta;
+}
+p#right-foot.footy a, a:hover {
+  color: darkmagenta;
+}
+#left-foot {
+   float: left;
+   margin-left: 50px;
+   margin-top: 10px;
+   color: darkmagenta;
+   text-shadow: 2px 1px white;
+   font-size: 2rem;
+}
+#right-foot {
+   float: right;
+   margin-right: 50px;
+   margin-top: 10px;
+   color: darkmagenta;
+   text-shadow: 2px 1px white;
+   font-size: 2rem;
+}
+footer {
+   margin: 0 auto;
+   padding: 5px;
+   background-color: lightgray;
+   width: 100%;
+}
+
+
+/************ Square *************/
+
+.square {
+   transition: 1s;
+   margin-left: -760%;
+   border: 5px solid #000;
+   letter-spacing: normal;
+   line-height: normal;
+   /* Color & Background */
+   color: rgb(0, 0, 0);
+   /* Box */
+   height: 50px;
+   width: 50px;
+   /* Positioning */
+   position: relative;
+   /* Effects */
+   transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+   transition: transform 0.4s ease-in-out 0s;
+   box-sizing: content-box;
+   margin-top: 80px;
+   margin-bottom: 10px;
+   border-radius: 10px;
+}
+
+.square:hover {
+   transition: 0.5s;
+   transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 736px) {
+   .square {
+       margin-left: -150px;
+       margin-bottom: 20px;
+   }
+}

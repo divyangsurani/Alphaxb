@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+}
+
+input {
+  padding: 0 10px;
+  outline: none;
+}
+#section1 {
+  background: rgba(255, 255, 255, 0);
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2); */
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 60%;
+  height: 28em;
+  text-align: center;
+  display: inline;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#section1 h1 {
+  font-size: 2em;
+  padding: 30px;
+}
+
+#websiteAdress {
+  height: 40px;
+  width: 400px;
+  border-radius: 12px;
+  border: 2px solid;
+  margin: 0 0 15px 0;
+  border-color: #000000;
+}
+.color_cont {
+  height: 40px;
+  width: 420px;
+  background: #fff;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 15px 0;
+}
+#color_demo {
+  width: 40px;
+  height: 35px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #7108b6;
+  margin: 0 5px;
+}
+.color_cont input {
+  height: 40px;
+  width: 400px;
+  border-radius: 12px;
+  border: 2px solid #000000;
+}
+
+.button {
+  height: 40px;
+  width: 400px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  background: #000000;
+  color: #fff;
+  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+  border: none;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.button:hover {
+  background: #4169e1;
+  color: #ffffff;
+}
+
+/* Section 2 */
+#section2 {
+  display: none;
+}
+
+.wrapper {
+  background: rgba(255, 255, 255, 0);
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2); */
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh
+}
+@keyframes ldio-tnoicgfz6f {
+  0% {
+    top: 96px;
+    left: 96px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 18px;
+    left: 18px;
+    width: 156px;
+    height: 156px;
+    opacity: 0;
+  }
+}
+
+.ldio-tnoicgfz6f div {
+  position: absolute;
+  border-width: 4px;
+  border-style: solid;
+  opacity: 1;
+  border-radius: 50%;
+  animation: ldio-tnoicgfz6f 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.ldio-tnoicgfz6f div:nth-child(1) {
+  border-color: #ffffff;
+}
+
+.ldio-tnoicgfz6f div:nth-child(2) {
+  border-color: #8800ff;
+  animation-delay: -0.5s;
+}
+
+.loadingio-spinner-ripple-4o61jz917vh {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+}
+.ldio-tnoicgfz6f {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+
+.ldio-tnoicgfz6f div {
+  box-sizing: content-box;
+}
+
+/* Section 3 */
+#section3 {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+#resultImg {
+  width: 50%;
+  margin: 10px;
+  border-radius: 10px;
+}
+.cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/************ Square *************/
+
+.square {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-weight: bold;
+  transition: 1s;
+  margin-left: 85px;
+  margin-top: 100px;
+  border: 5px solid #000000;
+  letter-spacing: normal;
+  line-height: normal;
+  /* Color & Background */
+  color: rgb(0, 0, 0);
+  /* Box */
+  height: 50px;
+  width: 50px;
+  /* Positioning */
+  position: relative;
+  /* Effects */
+  transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+  transition: transform 0.4s ease-in-out 0s;
+  box-sizing: content-box;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.square:hover {
+  transition: 0.5s;
+  transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 736px) {
+  .square {
+      margin-top: -18px;
+      margin-left: 20px;
+      margin-bottom: 112px;
+  }
+  .button {
+      font-size: 11px;
+      width: 24%;
+  }
+}
+
+.logo-text {
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: normal;
+  /* Positioning */
+  position: absolute;
+  top: 25px;
+  bottom: 10.7778px;
+  right: 5.29167px;
+  left: 25px;
+  float: none;
+  display: block;
+  clear: none;
+  z-index: auto;
+  /* Effects */
+  transform: matrix(6.12323e-17, 1, -1, 6.12323e-17, -9.77778, -7.11111);
+  transition: transform 0.4s ease-in-out 0s;
+}

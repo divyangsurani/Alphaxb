@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>chmod calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/assets/css/chmod_calculator.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+	<link rel="icon" href="/images/mylogo.png">
+    <link rel="stylesheet" href="/assets/css/nav.css">
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <!-- <a href="/" class="logo">
+                    <div class="square">
+                        <center><span class="logo-text">JA</span></center>
+                    </div>
+                </a> -->
+                <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2 style="font-size: 1.1em; font-weight: 800; text-align: left;">Menu</h2>
+            <ul style="text-decoration: none; text-align: left;">
+                <li><a style="text-decoration: none;" href="/">Home</a></li>
+                <li><a style="text-decoration: none;" href="/about">About Us</a></li>
+                <li><a style="text-decoration: none;" href="/contact">Contact Us</a></li>
+                <li><a style="text-decoration: none;" href="/privacypolicy">Privacy Policy</a></li>
+            </ul>
+        </nav>
+
+        <div id="app">
+            <div class="panel">
+                <h1><label>chmod</label> calculator</h1>
+                <div class="body">
+                    <div class="convertion">
+                        <input id="txtSymbolic" type="text" placeholder="-rwxrwxrwx" v-model="symbolic" @keypress="isSymbol($event)" maxlength="10" @change="updateCheckboxesFromSymbolic" @focus="$event.target.select()" />
+                        <input id="txtNumeric" type="text" placeholder="777" v-model="numeric" @keypress="isNumber($event)" maxlength="3" @change="updateCheckboxes" @focus="$event.target.select()" />
+                    </div>
+                    <div class="options">
+                        <div class="owner">
+                            <label class="title">owner</label>
+                            <div class="permissions">
+                                <div class="field">
+                                    <input id="chkOwnerRead" type="checkbox" v-model="owner.read" @change="checkedChange" />
+                                    <label for="chkOwnerRead" class="chkLike"></label>
+                                    <label for="chkOwnerRead">read</label>
+                                </div>
+                                <div class="field">
+                                    <input id="chkOwnerWrite" type="checkbox" v-model="owner.write" @change="checkedChange" />
+                                    <label for="chkOwnerWrite" class="chkLike"></label>
+                                    <label for="chkOwnerWrite">write</label>
+                                </div>
+                                <div class="field">
+                                    <input id="chkOwnerExecute" type="checkbox" v-model="owner.execute" @change="checkedChange" />
+                                    <label for="chkOwnerExecute" class="chkLike"></label>
+                                    <label for="chkOwnerExecute">execute</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label class="title">group</label>
+                            <div class="permissions">
+                                <div class="field">
+                                    <input id="chkGroupRead" type="checkbox" v-model="group.read" @change="checkedChange" />
+                                    <label for="chkGroupRead" class="chkLike"></label>
+                                    <label for="chkGroupRead">read</label>
+                                </div>
+                                <div class="field">
+                                    <input id="chkGroupWrite" type="checkbox" v-model="group.write" @change="checkedChange" />
+                                    <label for="chkGroupWrite" class="chkLike"></label>
+                                    <label for="chkGroupWrite">write</label>
+                                </div>
+                                <div class="field">
+                                    <input id="chkGroupExecute" type="checkbox" v-model="group.execute" @change="checkedChange" />
+                                    <label for="chkGroupExecute" class="chkLike"></label>
+                                    <label for="chkGroupExecute">execute</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="other">
+                            <label class="title">other</label>
+                            <div class="permissions">
+                                <div class="field">
+                                    <input id="chkOtherRead" type="checkbox" v-model="other.read" @change="checkedChange" />
+                                    <label for="chkOtherRead" class="chkLike"></label>
+                                    <label for="chkOtherRead">read</label>
+                                </div>
+                                <div class="field">
+                                    <input id="chkOtherWrite" type="checkbox" v-model="other.write" @change="checkedChange" />
+                                    <label for="chkOtherWrite" class="chkLike"></label>
+                                    <label for="chkOtherWrite">write</label>
+                                </div>
+                                <div class="field">
+                                    <input id="chkOtherExecute" type="checkbox" v-model="other.execute" @change="checkedChange" />
+                                    <label for="chkOtherExecute" class="chkLike"></label>
+                                    <label for="chkOtherExecute">execute</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer>
+                        <p>To learn more about file permissions check <a href="https://www.gnu.org/software/coreutils/manual/html_node/File-permissions.html" target="_blank">this</a>, and <a href="https://noted.eu.org/linux/linux-file-permissions-complete-guide/"
+                                target="_blank">this</a> links.</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src='https://unpkg.com/vue@next'></script>
+    <script src="/assets/js/chmod_calculator.js"></script>
+    <script defer src="/assets/js/jquery.min.js"></script>
+    <script defer src="/assets/js/browser.min.js"></script>
+    <script defer src="/assets/js/breakpoints.min.js"></script>
+    <script defer src="/assets/js/util.js"></script>
+    <script defer src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

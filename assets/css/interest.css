@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+}
+.container {
+  background-color: #F7F8FA;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  max-width: 600px;
+  min-width: 350px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 2px solid white;
+  box-shadow: 0 4px 8px 0 rgba(0, 35, 102, 0.2)
+}
+label {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+input {
+  margin-bottom: 20px;
+  border: none;
+  font-size: 20px;
+  border-bottom: 2px solid #585858;
+  color: #585858;
+  padding: 2px 15px;
+}
+input:focus {
+  outline: none;
+  border-bottom: 2.4px solid #6201e2;
+}
+.input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.input-wrapper input {
+  width: 100%;
+}
+.time-wrapper input {
+  width: 60%;
+}
+select {
+  width: 35%;
+  border: 1px solid #585858;
+  font-size: 20px;
+  margin-left: 3%;
+  padding: 8px 0;
+  border-radius: 5px;
+}
+button {
+  display: block;
+  background-color: #6201e2;
+  border: none;
+  color: #ffffff;
+  margin: 20px auto 0 auto;
+  padding: 15px 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#result {
+  background-color: #eee2ff;
+  margin-top: 30px;
+  color: #585858;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 5px;
+}
+#result div {
+  margin-bottom: 10px;
+}
+#result span {
+  color: #000000;
+  font-weight: 500;
+}
+
+/************ Square *************/
+
+.square {
+  transition: 1s;
+  margin-left: 90px;
+  margin-top: 100px;
+  border: 5px solid #000;
+  letter-spacing: normal;
+  line-height: normal;
+  /* Color & Background */
+  color: rgb(0, 0, 0);
+  /* Box */
+  height: 50px;
+  width: 50px;
+  /* Positioning */
+  position: relative;
+  /* Effects */
+  transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+  transition: transform 0.4s ease-in-out 0s;
+  box-sizing: content-box;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.square:hover {
+  transition: 0.5s;
+  transform: rotate(-180deg);
+}
+
+.logo-text {
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: normal;
+  /* Positioning */
+  position: absolute;
+  top: 25px;
+  bottom: 10.7778px;
+  right: 5.29167px;
+  left: 25px;
+  float: none;
+  display: block;
+  clear: none;
+  z-index: auto;
+  /* Effects */
+  transform: matrix(6.12323e-17, 1, -1, 6.12323e-17, -9.77778, -7.11111);
+  transition: transform 0.4s ease-in-out 0s;
+}
+
+@media screen and (max-width: 736px) {
+  .square {
+      margin-left: 10px;
+      margin-bottom: 20px;
+  }
+  .container {
+      margin-top: 32%;
+      width: 90%;
+  }
+}

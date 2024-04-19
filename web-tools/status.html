@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Status Code Cheat Sheet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css'>
+
+<link rel="stylesheet" href="/assets/css/status.css">
+<link rel="stylesheet" href="/assets/css/nav.css">
+<link rel="icon" href="/images/mylogo.png">
+<script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+	
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+   <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+          <div class="inner">
+    
+              <!-- Logo -->
+              <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+    
+              <!-- Nav -->
+              <nav>
+                  <ul>
+                      <li><a href="#menu">Menu</a></li>
+                  </ul>
+              </nav>
+    
+          </div>
+      </header>
+      <!-- Menu -->
+      <nav id="menu">
+          <h2>Menu</h2>
+          <ul style="font-weight: normal; text-align: left;">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+              <li><a href="/privacypolicy">Privacy Policy</a></li>
+          </ul>
+      </nav>
+    </div>
+   <main>
+<div class="top">
+<div class="row">
+<div class="col-sm-4" id="boxOne"> <!-- begin box ones -->
+<div class="panel-group" id="switch-fives">
+<div class="panel panel-default">
+<div class="panel-heading" id="switch1">
+<h4 class="panel-title">The Ones | Informational</h4>
+</div>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse1">100 Continue</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse2">101 Switching Protocols</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse3">102 Processing</button>
+<div id="collapse1" class="panel-collapse collapse">
+<div class="panel-body">
+The server has received the request headers, and that the client should proceed to send the request body.</div>
+</div>
+<div id="collapse2" class="panel-collapse collapse">
+<div class="panel-body">The requester has asked the server to switch protocols and the server is acknowledging that it will do so.</div>
+</div>
+<div id="collapse3" class="panel-collapse collapse">
+<div class="panel-body">The server has received and is processing the request, but no response is available yet.</div>
+</div>
+<div class="panel-footer">
+   <a href="#switch-fives">The Ones <i class="fas fa-angle-double-right" style="color:blue"></i></a>
+ <a href="#switch-ones">The Twos <i class="fas fa-angle-double-right" style="color:green"></i></a><a href="#switch-twos"> The Threes <i class="fas fa-angle-double-right" style="color:goldenrod"></i></a><a href="#switch-threes"> The Fours <i class="fas fa-angle-double-right" style="color:red"></i></a><a href="#switch-Fours"> The Fives <i class="fas fa-angle-double-right" style="color:darkred"></i></a> 
+</div>
+</div>
+</div>
+</div>  <!-- end box ones -->
+
+<div class="col-sm-4" id="middle">  <!-- begin box twos -->
+ <div class="panel-group" id="switch-twos">
+<div class="panel panel-default">
+<div class="panel-heading" id="switch2">
+<h4 class="panel-title">The Twos | Success</h4>
+</div>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse21">200 OK</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse22">201 Created</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse23">202 Accepted</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse24">203 Non-authoritative information</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse25">204 No Content</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse26">205 Reset Content</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse27">206 Partial Content</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse28">207 Multi-status</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse29">208 Already Reported</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse210">226 IM used Processing</button>
+<div id="collapse21" class="panel-collapse collapse">
+<div class="panel-body">
+The standard response for successful HTTP requests.</div>
+</div>
+<div id="collapse22" class="panel-collapse collapse">
+<div class="panel-body">The request has been fulfilled and a new resource has been created.</div>
+</div>
+<div id="collapse23" class="panel-collapse collapse">
+<div class="panel-body">The request has been accepted but has not been processed yet. This code does not guarantee that the request will process successfully.</div>
+</div>
+   <div id="collapse24" class="panel-collapse collapse">
+<div class="panel-body">HTTP 1.1. The server successfully processed the request but is returning information from another source.</div>
+</div>
+   <div id="collapse25" class="panel-collapse collapse">
+<div class="panel-body">The server accepted the request but is not returning any content. This is often used as a response to a DELETE request.</div>
+</div>
+   <div id="collapse26" class="panel-collapse collapse">
+<div class="panel-body">Similar to a 204 No Content response but this response requires the requester to reset the document view.</div>
+</div>
+   <div id="collapse27" class="panel-collapse collapse">
+<div class="panel-body">The server is delivering only a portion of the content, as requested by the client via a range header.</div>
+</div>
+   <div id="collapse28" class="panel-collapse collapse">
+<div class="panel-body">The message body that follows is an XML message and can contain a number of separate response codes, depending on how many sub-requests were made.</div>
+</div>
+   <div id="collapse29" class="panel-collapse collapse">
+<div class="panel-body">The members of a DAV binding have already been enumerated in a previous reply to this request, and are not being included again.</div>
+</div>
+   <div id="collapse210" class="panel-collapse collapse">
+<div class="panel-body">The server has fulfilled a GET request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.</div>
+</div>
+<div class="panel-footer">
+   <a href="#switch-fives">The Ones <i class="fas fa-angle-double-right" style="color:blue"></i></a>
+ <a href="#switch-ones">The Twos <i class="fas fa-angle-double-right" style="color:green"></i></a><a href="#switch-twos"> The Threes <i class="fas fa-angle-double-right" style="color:goldenrod"></i></a><a href="#switch-threes"> The Fours <i class="fas fa-angle-double-right" style="color:red"></i></a><a href="#switch-Fours"> The Fives <i class="fas fa-angle-double-right" style="color:darkred"></i></a> 
+</div>
+</div>
+</div>
+</div>  <!-- end box twos -->
+
+<div class="col-sm-4" id="far-right">  <!-- begin box threes -->
+<div class="panel-group" id="switch-threes">
+<div class="panel panel-default">
+<div class="panel-heading" id="switch3">
+<h4 class="panel-title">The Threes | Redirection
+</h4>
+</div>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse31">300 Multiple Choices</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse32">301 Moved Permanently</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse33">302 Found</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse34">303 See Other</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse35">304 Not Modified</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse36">305 Use Proxy</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse37">306 Switch Proxy</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse38">307 Temporary Redirect</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse39">308 Permanent redirect</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse310">308 Resume Incomplete (Google)</button>
+<div id="collapse31" class="panel-collapse collapse">
+<div class="panel-body">
+There are multiple options that the client may follow.</div>
+</div>
+<div id="collapse32" class="panel-collapse collapse">
+<div class="panel-body">The resource has been moved and all further requests should reference its new URI.</div>
+</div>
+<div id="collapse33" class="panel-collapse collapse">
+<div class="panel-body">The HTTP 1.0 specification described this status as "Moved Temporarily", but popular browsers respond to this status similar to behavior intended for 303. The resource can be retrieved by referencing the returned URI.</div>
+</div>
+   <div id="collapse34" class="panel-collapse collapse">
+<div class="panel-body">The resource can be retrieved by following other URI using the GET method. When received in response to a POST, PUT, or DELETE, it can usually be assumed that the server processed the request successfully and is sending the client to an informational endpoint.</div>
+</div>
+   <div id="collapse35" class="panel-collapse collapse">
+<div class="panel-body">The resource has not been modified since the version specified in If-Modified-Since or If-Match headers. The resource will not be returned in response body.</div>
+</div>
+   <div id="collapse36" class="panel-collapse collapse">
+<div class="panel-body">HTTP 1.1. The resource is only available through a proxy and the address is provided in the response.</div>
+</div>
+   <div id="collapse37" class="panel-collapse collapse">
+<div class="panel-body">Deprecated in HTTP 1.1. Used to mean that subsequent requests should be sent using the specified proxy.</div>
+</div>
+   <div id="collapse38" class="panel-collapse collapse">
+<div class="panel-body">HTTP 1.1. The request should be repeated with the URI provided in the response, but future requests should still call the original URI.</div>
+</div>
+   <div id="collapse39" class="panel-collapse collapse">
+<div class="panel-body">Experimental. The request and all future requests should be repeated with the URI provided in the response. The HTTP method is not allowed to be changed in the subsequent request.</div>
+</div>
+   <div id="collapse310" class="panel-collapse collapse">
+<div class="panel-body">This code is used in the Resumable HTTP Requests Proposal to resume aborted PUT or POST requests</div>
+</div>
+<div class="panel-footer">
+   <a href="#switch-fives">The Ones <i class="fas fa-angle-double-right" style="color:blue"></i></a>
+ <a href="#switch-ones">The Twos <i class="fas fa-angle-double-right" style="color:green"></i></a><a href="#switch-twos"> The Threes <i class="fas fa-angle-double-right" style="color:goldenrod"></i></a><a href="#switch-threes"> The Fours <i class="fas fa-angle-double-right" style="color:red"></i></a><a href="#switch-Fours"> The Fives <i class="fas fa-angle-double-right" style="color:darkred"></i></a> 
+      </div>
+</div>
+</div>  
+</div>  <!-- end box threes -->
+ </div>  
+      </div>
+<div class="bottom">  <!-- begin bottom row -->
+<div class="row">
+<div class="col-sm-4" id="middle">  <!-- begin box fours -->
+ <div class="panel-group" id="switch-fours">
+<div class="panel panel-default">
+<div class="panel-heading" id="switch4">
+<h4 class="panel-title">The Fours | Client Error</h4>
+</div>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse41">400 Bad Request</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse42">401 Unauthorized</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse43">402 Payment Required</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse44">403 Forbidden</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse45">404 Page Not Found</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse46">405 Method Not Allowed</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse47">406 Not Acceptable</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse48">407 Proxy Authentification Required</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse49">408 Request Timeout</button>   
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse410">409 Conflict</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse420">410 Gone</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse430">411 Length Required</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse440">412 Precondition Failed</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse450">413 Request Entity Too Large</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse460">414 Request-URI too long</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse470">415 Unsupported media type</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse480">416 Requested range not satisfiable</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse490">417 Expectation failed</button>   
+<button class="btn btn-default" data-toggle="collapse" href="#collapse441">418 I'm a teapot</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse442">421 Misdirected request</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse443">422 Unprocessable entity</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse444">423 Locked</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse445">424 Failed dependency</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse446">426 Upgrade required</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse447">428 Precondition required</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse448">429 Too many requests</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse449">431 Request header fields too large</button>   
+<button class="btn btn-default" data-toggle="collapse" href="#collapse4441">440 Login Timeout (Microsoft)</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse4442">444 No Response (Nginx)</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse4443">449 Retry With (Microsoft)</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse4444">450 Blocked by Windows Parental Controls (Microsoft)</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse4445">451 Unavailable For Legal Reasons</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse4446">451 Redirect (Microsoft)</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse4447">494 Request Header Too Large (Nginx)</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse4448">495 Cert Error (Nginx)</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse4449">496 No Cert (Nginx)</button>
+   
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse4440">497 HTTP to HTTPS (Nginx)</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse444401">498 Token expired/invalid (Esri)</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse444402">499 Client Closed Request (Nginx)</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse444403">499 Token required (Esri)</button>
+
+<div id="collapse41" class="panel-collapse collapse">
+<div class="panel-body">The request could not be fulfilled due to the incorrect syntax of the request.</div>
+</div>
+<div id="collapse42" class="panel-collapse collapse">
+<div class="panel-body">The requester is not authorized to access the resource. This is similar to 403 but is used in cases where authentication is expected but has failed or has not been provided.</div>
+</div>
+   <div id="collapse43" class="panel-collapse collapse">
+<div class="panel-body">Reserved for future use. Some web services use this as an indication that the client has sent an excessive number of requests.</div>
+</div>
+   <div id="collapse44" class="panel-collapse collapse">
+<div class="panel-body">The request was formatted correctly but the server is refusing to supply the requested resource. Unlike 401, authenticating will not make a difference in the server's response.</div>
+</div>
+   <div id="collapse45" class="panel-collapse collapse">
+<div class="panel-body">The resource could not be found. This is often used as a catch-all for all invalid URIs requested of the server.</div>
+</div>
+   <div id="collapse46" class="panel-collapse collapse">
+<div class="panel-body">The resource was requested using a method that is not allowed. For example, requesting a resource via a POST method when the resource only supports the GET method.</div>
+</div>
+   <div id="collapse47" class="panel-collapse collapse">
+<div class="panel-body">The resource is valid, but cannot be provided in a format specified in the Accept headers in the request.</div>
+</div>
+   <div id="collapse48" class="panel-collapse collapse">
+<div class="panel-body">Authentication is required with the proxy before requests can be fulfilled.</div>
+</div>  
+   
+   <div id="collapse49" class="panel-collapse collapse">
+<div class="panel-body">The server timed out waiting for a request from the client. The client is allowed to repeat the request.</div>
+</div>  
+   
+   <div id="collapse410" class="panel-collapse collapse">
+<div class="panel-body">The request cannot be completed due to a conflict in the request parameters.</div>
+</div>
+   <div id="collapse420" class="panel-collapse collapse">
+<div class="panel-body">The resource is no longer available at the requested URI and no redirection will be given.</div>
+</div>
+<div id="collapse430" class="panel-collapse collapse">
+<div class="panel-body">The request did not specify the length of its content as required by the resource.</div>
+</div>
+   <div id="collapse440" class="panel-collapse collapse">
+<div class="panel-body">The server does not meet one of the preconditions specified by the client.</div>
+</div>
+   <div id="collapse450" class="panel-collapse collapse">
+<div class="panel-body">The request is larger than what the server is able to process.</div>
+</div>
+   <div id="collapse460" class="panel-collapse collapse">
+<div class="panel-body">The URI provided in the request is too long for the server to process. This is often used when too much data has been encoded into the URI of a GET request and a POST request should be used instead.</div>
+</div>
+   <div id="collapse470" class="panel-collapse collapse">
+<div class="panel-body">The client provided data with a media type that the server does not support.</div>
+</div>
+   <div id="collapse480" class="panel-collapse collapse">
+<div class="panel-body">The client has asked for a portion of the resource but the server cannot supply that portion.</div>
+</div>
+   <div id="collapse490" class="panel-collapse collapse">
+<div class="panel-body">The server cannot meet the requirements of the Expect request-header field.</div>
+</div>  
+   <div id="collapse441" class="panel-collapse collapse">
+<div class="panel-body">Any attempt to brew coffee with a teapot should result in the error code "418 I'm a teapot". The resulting entity body MAY be short and stout.</div>
+</div>
+   
+   <div id="collapse442" class="panel-collapse collapse">
+<div class="panel-body">The request was directed at a server that is not able to produce a response. This can be sent by a server that is not configured to produce responses for the combination of scheme and authority that are included in the request URI.</div>
+</div>
+<div id="collapse443" class="panel-collapse collapse">
+<div class="panel-body">The request was formatted correctly but cannot be processed in its current form. Often used when the specified parameters fail validation errors.</div>
+</div>
+   <div id="collapse444" class="panel-collapse collapse">
+<div class="panel-body">The requested resource was found but has been locked and will not be returned.</div>
+</div>
+   <div id="collapse445" class="panel-collapse collapse">
+<div class="panel-body">The request failed due to a failure of a previous request.</div>
+</div>
+   <div id="collapse446" class="panel-collapse collapse">
+<div class="panel-body">The client should repeat the request using an upgraded protocol such as TLS 1.0.</div>
+</div>
+   <div id="collapse447" class="panel-collapse collapse">
+<div class="panel-body">The origin server requires the request to be conditional.</div>
+</div>
+   <div id="collapse448" class="panel-collapse collapse">
+<div class="panel-body">The user has sent too many requests in a given amount of time ("rate limiting").</div>
+</div>
+   <div id="collapse449" class="panel-collapse collapse">
+<div class="panel-body">The server is unwilling to process the request because its header fields are too large.</div>
+</div>
+   
+   <div id="collapse4441" class="panel-collapse collapse">
+<div class="panel-body">A Microsoft extension. Indicates that your session has expired.</div>
+</div>
+   <div id="collapse4442" class="panel-collapse collapse">
+<div class="panel-body">Used in Nginx logs to indicate that the server has returned no information to the client and closed the connection (useful as a deterrent for malware).</div>
+</div>
+<div id="collapse4443" class="panel-collapse collapse">
+<div class="panel-body">A Microsoft extension. The request should be retried after performing the appropriate action.</div>
+</div>
+   <div id="collapse4444" class="panel-collapse collapse">
+<div class="panel-body">A Microsoft extension. This error is given when Windows Parental Controls are turned on and are blocking access to the given webpage.</div>
+</div>
+   <div id="collapse4445" class="panel-collapse collapse">
+<div class="panel-body">A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource.</div>
+</div>
+   <div id="collapse4446" class="panel-collapse collapse">
+<div class="panel-body">Used in Exchange ActiveSync if there either is a more efficient server to use or the server cannot access the users' mailbox.</div>
+</div>
+   <div id="collapse44417" class="panel-collapse collapse">
+<div class="panel-body">Nginx internal code similar to 431 but it was introduced earlier in version 0.9.4</div>
+</div>
+   <div id="collapse4448" class="panel-collapse collapse">
+<div class="panel-body">Nginx internal code used when SSL client certificate error occurred to distinguish it from 4XX in a log and an error page redirection.</div>
+</div>
+   <div id="collapse4449" class="panel-collapse collapse">
+<div class="panel-body">Nginx internal code used when client didn't provide certificate to distinguish it from 4XX in a log and an error page redirection.</div>
+</div>   
+   <div id="collapse4440" class="panel-collapse collapse">
+<div class="panel-body">Nginx internal code used for the plain HTTP requests that are sent to HTTPS port to distinguish it from 4XX in a log and an error page redirection.</div>
+</div>   
+   <div id="collapse44440" class="panel-collapse collapse">
+<div class="panel-body">Returned by ArcGIS for Server. A code of 498 indicates an expired or otherwise invalid token.</div>
+</div>
+<div id="collapse444401" class="panel-collapse collapse">
+<div class="panel-body">Used in Nginx logs to indicate when the connection has been closed by client while the server is still processing its request, making server unable to send a status code back.</div>
+</div>
+   <div id="collapse444402" class="panel-collapse collapse">
+<div class="panel-body">Returned by ArcGIS for Server. A code of 499 indicates that a token is required (if no token was submitted).</div>
+</div>  
+<div class="panel-footer">
+   <a href="#switch-fives">The Ones <i class="fas fa-angle-double-right" style="color:blue"></i></a>
+ <a href="#switch-ones">The Twos <i class="fas fa-angle-double-right" style="color:green"></i></a><a href="#switch-twos"> The Threes <i class="fas fa-angle-double-right" style="color:goldenrod"></i></a><a href="#switch-threes"> The Fours <i class="fas fa-angle-double-right" style="color:red"></i></a><a href="#switch-Fours"> The Fives <i class="fas fa-angle-double-right" style="color:darkred"></i></a> 
+</div>
+</div>  <!-- end box fours -->
+</div>
+</div>  
+   
+    <div class="col-sm-6" id="bottomRight">  <!-- begin box fives -->
+<div class="panel-group" id="switch-Fours">
+<div class="panel panel-default">
+<div class="panel-heading" id="switch5">
+<h4 class="panel-title">The Fives | Server Error
+</h4>
+</div>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse51">500 Internal server error</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse52">501 Not implemented</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse53">502 Bad gateway</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse54">503 Service unavailable</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse55">504 Gateway timeout</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse56">505 HTTP version not supported</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse57">506 Variant also negotiates</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse58">507 Insufficient storage</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse59">508 Loop detected</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse550">509 Bandwidth Limit Exceeded (Apache bw/limited ext)</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse551">510 Not extended</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse552">511 Network authentication required</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse553">520 Unknown Error (Microsoft / CloudFlare)</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse554">521 Web Server Is Down (CloudFlare)</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse555">522 Connection Timed Out (CloudFlare)</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse556">523 Origin Is Unreachable (CloudFlare)</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse557">524 A Timeout Occurred (CloudFlare)</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse558">525 SSL Handshake Failed (CloudFlare)</button>
+<button class="btn btn-default" data-toggle="collapse" href="#collapse559">526 Invalid SSL Certificate (CloudFlare)</button>
+   <button class="btn btn-default" data-toggle="collapse" href="#collapse5550">527 Railgun Error (CloudFlare)</button>
+   
+<div id="collapse51" class="panel-collapse collapse">
+<div class="panel-body">
+A generic status for an error in the server itself.</div>
+</div>
+<div id="collapse52" class="panel-collapse collapse">
+<div class="panel-body">The server cannot respond to the request. This usually implies that the server could possibly support the request in the future — otherwise a 4xx status may be more appropriate.</div>
+</div>
+<div id="collapse53" class="panel-collapse collapse">
+<div class="panel-body">The server is acting as a proxy and did not receive an acceptable response from the upstream server.</div>
+</div>
+   <div id="collapse54" class="panel-collapse collapse">
+<div class="panel-body">The server is down and is not accepting requests.</div>
+</div>
+   <div id="collapse55" class="panel-collapse collapse">
+<div class="panel-body">The server is acting as a proxy and did not receive a response from the upstream server.</div>
+</div>
+   <div id="collapse56" class="panel-collapse collapse">
+<div class="panel-body">The server does not support the HTTP protocol version specified in the request.</div>
+</div>
+   <div id="collapse57" class="panel-collapse collapse">
+<div class="panel-body">Transparent content negotiation for the request results in a circular reference.</div>
+</div>
+   <div id="collapse58" class="panel-collapse collapse">
+<div class="panel-body">The user or server does not have sufficient storage quota to fulfill the request.</div>
+</div>
+   <div id="collapse59" class="panel-collapse collapse">
+<div class="panel-body">The server detected an infinite loop in the request.</div>
+</div>
+   <div id="collapse550" class="panel-collapse collapse">
+<div class="panel-body">This status code is not specified in any RFCs. Its use is unknown.</div>
+</div>
+   
+   <div id="collapse551" class="panel-collapse collapse">
+<div class="panel-body">
+Further extensions to the request are necessary for it to be fulfilled.</div>
+</div>
+<div id="collapse552" class="panel-collapse collapse">
+<div class="panel-body">The client must authenticate with the network before sending requests.</div>
+</div>
+<div id="collapse553" class="panel-collapse collapse">
+<div class="panel-body">This status code is not specified in any RFC and is returned by certain services, for instance Microsoft Azure and CloudFlare servers: "The 520 error is essentially a "catch-all" response for when the origin server returns something unexpected or something that is not tolerated/interpreted (protocol violation or empty response)."</div>
+</div>
+   <div id="collapse554" class="panel-collapse collapse">
+<div class="panel-body">The origin server has refused the connection from CloudFlare.</div>
+</div>
+   <div id="collapse555" class="panel-collapse collapse">
+<div class="panel-body">CloudFlare could not negotiate a TCP handshake with the origin server.</div>
+</div>
+   <div id="collapse556" class="panel-collapse collapse">
+<div class="panel-body">CloudFlare could not reach the origin server; for example, if the DNS records for the origin server are incorrect.</div>
+</div>
+   <div id="collapse557" class="panel-collapse collapse">
+<div class="panel-body">CloudFlare was able to complete a TCP connection to the origin server, but did not receive a timely HTTP response.</div>
+</div>
+   <div id="collapse558" class="panel-collapse collapse">
+<div class="panel-body">CloudFlare could not negotiate a SSL/TLS handshake with the origin server.</div>
+</div>
+   <div id="collapse559" class="panel-collapse collapse">
+<div class="panel-body">CloudFlare could not validate the SSL/TLS certificate that the origin server presented.</div>
+</div>
+   <div id="collapse5550" class="panel-collapse collapse">
+<div class="panel-body">The request timed out or failed after the WAN connection has been established.</div>
+</div>   
+<div class="panel-footer">
+   <a href="#switch-fives">The Ones <i class="fas fa-angle-double-right" style="color:blue"></i></a>
+ <a href="#switch-ones">The Twos <i class="fas fa-angle-double-right" style="color:green"></i></a><a href="#switch-twos"> The Threes <i class="fas fa-angle-double-right" style="color:goldenrod"></i></a><a href="#switch-threes"> The Fours <i class="fas fa-angle-double-right" style="color:red"></i></a><a href="#switch-Fours"> The Fives <i class="fas fa-angle-double-right" style="color:darkred"></i></a> 
+      <i class="fas fa-exclamation-circle" style="color:red; margin-left: 5px"> The End</i></div>
+</div>
+</div>  
+</div>
+   
+   </div>
+</div>  <!-- end bottom row -->
+</main>
+</body>
+<!-- partial -->
+  <script  src="/assets/js/status.js"></script>
+   <script defer src="/assets/js/jquery.min.js"></script>
+   <script defer src="/assets/js/browser.min.js"></script>
+   <script defer src="/assets/js/breakpoints.min.js"></script>
+   <script defer src="/assets/js/util.js"></script>
+   <script defer src="/assets/js/main.js"></script>
+
+</body>
+</html>

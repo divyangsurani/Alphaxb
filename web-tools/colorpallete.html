@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Color Pallete Generator</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/colorpallete.css" />
+    <link rel="stylesheet" href="/assets/css/nav.css" />
+    <link rel="icon" href="/images/mylogo.png">
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <!-- <a href="/" class="logo">
+                    <div class="square">
+                        <center><span class="logo-text"><b>JA</b></span></center>
+                    </div>
+                </a> -->
+                <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu" style="text-align: left;">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/privacypolicy">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h2 style="letter-spacing: 2px;">Color palette generator</h2>
+
+            <div class="cards">
+                <div class="card" id="myInput">
+                    <div class="canvas"></div>
+                    <div class="hex" onclick="myFunction()">#93B8E3</div>
+                </div>
+                <div class="card" id="myInput">
+                    <div class="canvas"></div>
+                    <div class="hex" onclick="myFunction()">#A3B2C2</div>
+                </div>
+                <div class="card" id="myInput">
+                    <div class="canvas"></div>
+                    <div class="hex" onclick="myFunction()">#FBABA4</div>
+                </div>
+                <div class="card" id="myInput">
+                    <div class="canvas"></div>
+                    <div class="hex" onclick="myFunction()">#7C7C84</div>
+                </div>
+                <div class="card" id="myInput">
+                    <div class="canvas"></div>
+                    <div class="hex" onclick="myFunction()">#AF4884</div>
+                </div>
+            </div>
+
+            <button class="btn" id="btn">Generate palette</button>
+        </div>
+    </div>
+    <script defer src="/assets/js/colorpallete.js"></script>
+    <script defer src="/assets/js/jquery.min.js"></script>
+    <script defer src="/assets/js/browser.min.js"></script>
+    <script defer src="/assets/js/breakpoints.min.js"></script>
+    <script defer src="/assets/js/util.js"></script>
+    <script defer src="/assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+body {
+    background-color: #F7F8FA;
+    background-size: cover;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0 0 2em 0;
+}
+
+
+/************ Square *************/
+
+.square {
+    transition: 1s;
+    margin-left: 90px;
+    margin-top: 100px;
+    border: 5px solid #000;
+    letter-spacing: normal;
+    line-height: normal;
+    /* Color & Background */
+    color: rgb(0, 0, 0);
+    /* Box */
+    height: 50px;
+    width: 50px;
+    /* Positioning */
+    position: relative;
+    /* Effects */
+    transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+    transition: transform 0.4s ease-in-out 0s;
+    box-sizing: content-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.square:hover {
+    transition: 0.5s;
+    transform: rotate(-180deg);
+}
+
+.logo-text {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: normal;
+    /* Positioning */
+    position: absolute;
+    top: 25px;
+    bottom: 10.7778px;
+    right: 5.29167px;
+    left: 25px;
+    float: none;
+    display: block;
+    clear: none;
+    z-index: auto;
+    /* Effects */
+    transform: matrix(6.12323e-17, 1, -1, 6.12323e-17, -9.77778, -7.11111);
+    transition: transform 0.4s ease-in-out 0s;
+}
+
+.title {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.outer-box {
+    height: true;
+    width: 1000px;
+    margin: 100px auto auto auto;
+    border-radius: 10px;
+    background-color: #F7F8FA;
+    padding: 20px;
+    box-shadow: 0px 4px 8px 0 rgb(0, 35, 102, 0.2);
+}
+
+.spacer {
+    margin-bottom: 20px;
+}
+
+#class-name {
+    margin-left: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.course {
+    width: 400px;
+    height: 35px;
+    padding-left: 5px;
+    margin-left: 10px;
+    margin-right: 50px;
+    font-size: 20px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.units {
+    width: 100px;
+    height: 35px;
+    margin-right: 50px;
+    font-size: 20px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.block {
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin-left: 10px;
+    border: 2px solid black;
+    font-weight: bold;
+    width: 250px;
+    text-align: center;
+    margin-bottom: 15px
+}
+
+.result {
+    width: 200px;
+    height: 75px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 20px auto 20px auto;
+}
+
+#gpa {
+    font-size: 4rem;
+    color: black;
+    font-weight: bold;
+}
+
+.grade-select {
+    border: 1px solid gray;
+    border-radius: 4px;
+    height: 28px;
+    width: 90px;
+}
+
+@media screen and (max-width: 736px) {
+    .square {
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+}

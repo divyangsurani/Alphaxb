@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Website Screenshot Taker 📸</title>
+  <link rel="stylesheet" href="/assets/css/WebSnap.css">
+  <link rel="stylesheet" href="/assets/css/nav.css">
+  <link rel="icon" href="/images/mylogo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "iavxws4fvy");
+</script>
+
+</head>
+<body>
+  <div class="wrapped">
+    <header id="header">
+        <div class="inner">
+
+            <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul style="font-weight: normal;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/privacypolicy">Privacy Policy</a></li>
+        </ul>
+    </nav>
+  </div>
+<!-- partial:index.partial.html -->
+<section id="section1">
+  <h1>Taking screenshots from website urls in seconds. We care your time</h1>
+  <div class="cont">
+    <input type="text" id="websiteAdress" value='alphaxb.com'>
+    <div class="color_cont">
+      <div id="color_demo"></div>
+      <input type="text" id="bgColor" value='7108B6'>
+    </div>
+    <button type="submit" id="submitBtn" onclick='generateMockup();changeView()' class="button">Take Screenshot</button>
+  </div>
+</section>
+<div id="section2">
+  <div class="wrapper">
+    <div  class="loadingio-spinner-ripple-4o61jz917vh">
+      <div class="ldio-tnoicgfz6f">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="section3">
+  <div class="cont">
+    <h1>Here it is! Download your Mockup!</h1>
+    <img alt="" id='resultImg'>
+    <button id="Download" class="button">Download</button>
+    <button class="button" style="margin-bottom: 50px;" onclick="window.location.reload();">Take another screenshot</button>
+    </a>
+  </div>
+</div>
+<!-- partial -->
+  <script  src="/assets/js/WebSnap.js"></script>
+  <script defer src="/assets/js/jquery.min.js"></script>
+  <script defer src="/assets/js/browser.min.js"></script>
+  <script defer src="/assets/js/breakpoints.min.js"></script>
+  <script defer src="/assets/js/util.js"></script>
+  <script defer src="/assets/js/main.js"></script>
+
+</body>
+</html>

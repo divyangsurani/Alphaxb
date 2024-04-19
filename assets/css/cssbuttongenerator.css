@@ -1,0 +1,376 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    color: #333;
+}
+
+
+/************ Square *************/
+
+.square {
+    transition: 1s;
+    margin-left: 90px;
+    margin-top: 100px;
+    border: 5px solid #000;
+    letter-spacing: normal;
+    line-height: normal;
+    /* Color & Background */
+    color: rgb(0, 0, 0);
+    /* Box */
+    height: 50px;
+    width: 50px;
+    /* Positioning */
+    position: relative;
+    /* Effects */
+    transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+    transition: transform 0.4s ease-in-out 0s;
+    box-sizing: content-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.square:hover {
+    transition: 0.5s;
+    transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 736px) {
+    .square {
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+.logo-text {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: normal;
+    /* Positioning */
+    position: absolute;
+    top: 25px;
+    bottom: 10.7778px;
+    right: 5.29167px;
+    left: 25px;
+    float: none;
+    display: block;
+    clear: none;
+    z-index: auto;
+    /* Effects */
+    transform: matrix(6.12323e-17, 1, -1, 6.12323e-17, -9.77778, -7.11111);
+    transition: transform 0.4s ease-in-out 0s;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #F7F8FA;
+    display: table;
+}
+
+input[type="text"]:focus {
+    border: 1px solid #cc6666 !important;
+}
+
+input[type="number"]:focus {
+    border: 1px solid #cc6666 !important;
+}
+
+.container {
+    position: relative;
+    left: 50%;
+    margin-left: -338px;
+    width: 676px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.first {
+    position: absolute;
+    top: -23px;
+    left: 0;
+}
+
+.third {
+    position: relative;
+    top: 19px;
+    left: -170px;
+}
+
+.generator-wrapper {
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    width: 380px;
+    border-radius: 10px;
+    padding: 17px 17px;
+    margin-top: 22px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px 0 rgb(0, 35, 102, 0.2);
+    float: left;
+}
+
+.button-preview {
+    position: relative;
+    transition: all 0.3s linear;
+}
+
+.button-wrapper {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    float: left;
+    box-shadow: 0px 4px 8px 0 rgb(0, 35, 102, 0.2);
+}
+
+.codes-wrapper {
+    position: relative;
+    border-radius: 4px;
+    clear: both;
+}
+
+.wrap {
+    position: relative;
+}
+
+.wrap p {
+    position: absolute;
+    top: 10px;
+    font-size: 12px;
+}
+
+.wrap:nth-child(2) p {
+    top: 8px;
+}
+
+.wrap:nth-child(3) p {
+    top: 1px;
+}
+
+.wrap:nth-child(4) p {
+    top: 1px;
+}
+
+.wrap:nth-child(9) p {
+    top: 12px;
+}
+
+.button {
+    box-sizing: initial;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #fff;
+    background-color: #cc6666;
+    text-align: center;
+    white-space: pre;
+    font-family: arial;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.text {
+    width: 200px;
+    height: 30px;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    padding: 3px 6px;
+    display: block;
+    margin: 0 auto;
+}
+
+.font {
+    width: 215px;
+    height: 30px;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    padding: 3px 6px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 18px;
+}
+
+.font:focus {
+    border: 1px solid #cc6666;
+}
+
+#font-size {
+    width: 200px;
+    color: #333;
+    display: block;
+    margin: 0 auto;
+}
+
+#font-size-amount {
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 18px;
+}
+
+.ui-slider {
+    border: 1px solid #D1D1D1 !important;
+    height: 15px !important;
+}
+
+.ui-slider-range {
+    background: #333;
+    border: none !important;
+}
+
+.ui-slider-handle {
+    border: 1px solid #D1D1D1 !important;
+    background: #fff !important;
+    height: 25px !important;
+    top: -6px !important;
+}
+
+#border-radius {
+    width: 200px;
+    color: #333;
+    display: block;
+    margin: 0 auto;
+}
+
+#border-radius-amount {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 13px;
+}
+
+.padding {
+    width: 200px;
+    height: 30px;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    padding: 3px 6px;
+    margin-bottom: 5px;
+}
+
+.padding:focus {
+    border: 1px solid #33C3F0;
+}
+
+#hue {
+    height: 30px;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    padding: 3px 30px;
+}
+
+.minicolors-position-left .minicolors-panel {
+    top: 40px;
+    left: 0;
+}
+
+.minicolors-theme-default .minicolors-swatch {
+    top: 9px;
+}
+
+.color {
+    display: block !important;
+    float: left;
+}
+
+.background-color {
+    display: block !important;
+    float: left;
+}
+
+.background-color-hover {
+    display: block !important;
+    float: left;
+}
+
+.wrap:last-child {
+    margin-top: 4px;
+}
+
+.clipboard {
+    position: absolute;
+    right: 140px;
+    top: 15px;
+    font-size: 15px;
+    font-weight: normal;
+    background: #333;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    clear: both;
+}
+
+.clipboard:hover {
+    background: #282828;
+}
+
+color-hover {
+    display: block !important;
+    float: left;
+}
+
+.copied-to-clipboard {
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    top: 45px;
+    right: 142px;
+    padding: 2px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #dddddd;
+    background: rgba(0, 0, 0, 0.50);
+}
+
+.copied-to-clipboard:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 24px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent rgba(0, 0, 0, 0.50) transparent;
+}
+
+.codes {
+    width: 400px;
+    border-radius: 10px;
+    padding: 17px 17px;
+    box-sizing: border-box;
+    display: block;
+    margin: 18px auto;
+    text-align: left;
+    font-family: monospace;
+    font-size: 15px;
+    box-shadow: 0px 4px 8px 0 rgb(0, 35, 102, 0.2);
+}
+
+.codes:active {
+    border: 1px solid #cc6666;
+}
+
+.codes p {
+    background: #fff5;
+    display: block;
+}

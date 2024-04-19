@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>HTML preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="/assets/css/html_previewer.css">
+<link rel="stylesheet" href="/assets/css/nav.css" />
+<link rel="icon" href="/images/mylogo.png">
+
+</head>
+<body>
+  <div class="wrapper">
+<!-- partial:index.partial.html -->
+<!-- partial:index.partial.html -->
+<div id="wrapper">
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+  
+			<!-- Logo -->
+			<!-- <a href="/" class="logo">
+				<div class="square">
+					<center><span class="logo-text"><b>JA</b></span></center>
+				</div>
+			</a> -->
+			<a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+  
+			<!-- Nav -->
+			<nav>
+				<ul>
+					<li><a href="#menu">Menu</a></li>
+				</ul>
+			</nav>
+  
+		</div>
+	</header>
+	<!-- Menu -->
+	<nav id="menu">
+		<h2>Menu</h2>
+		<ul style="font-weight: normal; text-align: left;">
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About Us</a></li>
+			<li><a href="/contact">Contact Us</a></li>
+			<li><a href="/privacypolicy">Privacy Policy</a></li>
+		</ul>
+	</nav>
+  </div>
+<div class="container">
+  <label for="html" class="label-text"><b>Insert your HTML</b></label>
+  <textarea name="html" id="html" cols="30" rows="10"></textarea>
+  <hr />
+  <label for="preview" class="label-text"><b>Preview</b></label>
+  <iframe id="preview"></iframe>
+</div>
+</div>
+<!-- partial -->
+  <script  src="/assets/js/html_previewer.js"></script>
+  <script defer src="/assets/js/jquery.min.js"></script>
+  <script defer src="/assets/js/browser.min.js"></script>
+  <script defer src="/assets/js/breakpoints.min.js"></script>
+  <script defer src="/assets/js/util.js"></script>
+  <script defer src="/assets/js/main.js"></script>
+
+
+</body>
+</html>

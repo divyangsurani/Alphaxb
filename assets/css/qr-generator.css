@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+body {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.heading {
+  font-size: 2em;
+  margin: 3em 0 2em;
+}
+.qrBtn {
+  display: block;
+  padding: 10px 45px;
+  margin: 0 auto 2em;
+  background-color: #fff;
+  border: 1px solid #000;
+  outline: none;
+  cursor: pointer;
+}
+
+
+/* Input Field Animation */
+.inputGroup {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1em 0;
+}
+.inputGroup input {
+  background-color: inherit;
+  color: #000;
+  font-size: 1em;
+  padding: 30px 10px 10px;
+  border: none;
+  border-bottom: 2px solid gray;
+  outline: none;
+}
+.inputGroup input::placeholder {
+  opacity: 0;
+}
+.inputGroup label {
+  position: absolute;
+  /* padding-left: 10px; */
+  margin-bottom: 2px;
+  color: gray;
+  cursor: pointer;
+  transform: translate(4px, -14px) scale(1.02);
+  transform-origin: left top;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 12px;
+}
+.inputGroup input,
+.inputGroup label {
+  transition: 0.4s all ease;
+}
+.inputGroup input:focus,
+.inputGroup input:not(:placeholder-shown) {
+  border-bottom: 2px solid #000;
+}
+.inputGroup input:focus ~ label,
+.inputGroup input:not(:placeholder-shown) ~ label {
+  transform: translate(10px, -35px) scale(0.9);
+  padding: 0;
+  color: #000;
+}
+
+
+.container{
+  margin-top: 150px;
+}
+
+/************ Square *************/
+
+.square {
+  transition: 1s;
+  margin-left: -590px;
+  margin-top: 120px;
+  border: 5px solid #000;
+  letter-spacing: normal;
+  line-height: normal;
+  /* Color & Background */
+  color: rgb(0, 0, 0);
+  /* Box */
+  height: 50px;
+  width: 50px;
+  /* Positioning */
+  position: relative;
+  /* Effects */
+  transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+  transition: transform 0.4s ease-in-out 0s;
+  box-sizing: content-box;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.square:hover {
+  transition: 0.5s;
+  transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 736px) {
+  .square {
+      margin-left: -150px;
+      margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="/assets/css/qr-generator.css">
+
+  <link rel="stylesheet" href="/assets/css/nav.css" />
+  <link rel="icon" href="/images/mylogo.png">
+  <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="wrapper">
+  <!-- Header -->
+  <header id="header">
+      <div class="inner">
+
+          <!-- Logo -->
+          <!-- <a href="/" class="logo">
+              <div class="square">
+                  <center><span class="logo-text"><b>JA</b></span></center>
+              </div>
+          </a> -->
+          <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+
+          <!-- Nav -->
+          <nav>
+              <ul>
+                  <li><a href="#menu">Menu</a></li>
+              </ul>
+          </nav>
+
+      </div>
+  </header>
+  <!-- Menu -->
+  <nav id="menu">
+      <h2>Menu</h2>
+      <ul style="font-weight: normal; text-align: left;">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacypolicy">Privacy Policy</a></li>
+      </ul>
+  </nav>
+</div>
+<div class="container">
+  <div class="inputGroup">
+    <input type="text" id="qrText" placeholder="Enter Text" />
+    <label for="qrText">Enter text or URL to create QR Code</label>
+  </div>
+  <button class="qrBtn" onclick="generateQRCode();">
+    Generate QR Code
+  </button>
+  <canvas id="qrCode"></canvas>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<!-- partial -->
+  <script  src="/assets/js/qr-generator.js"></script>
+  <script defer src="/assets/js/jquery.min.js"></script>
+  <script defer src="/assets/js/browser.min.js"></script>
+  <script defer src="/assets/js/breakpoints.min.js"></script>
+  <script defer src="/assets/js/util.js"></script>
+  <script defer src="/assets/js/main.js"></script>
+
+</body>
+</html>

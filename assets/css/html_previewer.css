@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 2em 1em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#html {
+  width: 85%;
+  min-height: 40%;
+  max-height: 80%;
+  max-width: 85%;
+  margin-left: 8%;
+  padding-top: 10px;
+  padding-left: 10px;
+  background: #f3f3f3; 
+  border-radius: 6px;
+  border: none;
+  box-shadow: inset -3px -3px 7px #ffffffb0,  
+     inset 3px 3px 5px rgba(94, 104, 121, 0.692); 
+}
+
+#html:focus{
+  outline: none;
+}
+
+#preview {
+  width: 85%;
+  margin-left: 8%;
+  min-height: 50%;
+}
+
+#preview{
+    background: #e5e5e5; 
+    border-radius: 6px; 
+    box-shadow: inset -3px -3px 7px #ffffffb0,  
+       inset 3px 3px 5px rgba(94, 104, 121, 0.692); 
+}
+
+.label-text{
+  margin-left: 8%;
+}
+
+/************ Square *************/
+
+.square {
+  transition: 1s;
+  margin-left: 95px;
+  margin-top: 120px;
+  border: 5px solid #000;
+  letter-spacing: normal;
+  line-height: normal;
+  /* Color & Background */
+  color: rgb(0, 0, 0);
+  /* Box */
+  height: 50px;
+  width: 50px;
+  /* Positioning */
+  position: relative;
+  /* Effects */
+  transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+  transition: transform 0.4s ease-in-out 0s;
+  box-sizing: content-box;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.square:hover {
+  transition: 0.5s;
+  transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 736px) {
+  .square {
+      margin-left: -150px;
+      margin-bottom: 20px;
+  }
+}

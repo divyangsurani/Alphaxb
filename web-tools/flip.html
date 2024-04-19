@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip A Coin</title>
+    <link rel="icon" href="/images/mylogo.png">
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="/assets/css/flip.css">
+    <link rel="stylesheet" href="/assets/css/nav.css" />
+    <style>
+        .square {
+            transition: 1s;
+            border: 5px solid #000;
+            letter-spacing: normal;
+            line-height: normal;
+            /* Color & Background */
+            color: rgb(0, 0, 0);
+            /* Box */
+            height: 50px;
+            width: 50px;
+            /* Positioning */
+            position: relative;
+            /* Effects */
+            transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0), rotate(0deg);
+            transition: transform 0.4s ease-in-out 0s;
+            box-sizing: content-box;
+            border-radius: 10px;
+            margin-top: 5%;
+            margin-left: 5%
+        }
+        
+        .square:hover {
+            transition: 1s;
+            transform: rotate(-180deg);
+        }
+        
+        .logo-text {
+            text-align: center;
+            font-size: 25px;
+            letter-spacing: normal;
+            /* Positioning */
+            position: absolute;
+            top: 25px;
+            bottom: 10.7778px;
+            right: 5.29167px;
+            left: 25px;
+            float: none;
+            display: block;
+            clear: none;
+            z-index: auto;
+            /* Effects */
+            transform: matrix(6.12323e-17, 1, -1, 6.12323e-17, -9.77778, -7.11111);
+            transition: transform 0.4s ease-in-out 0s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <!-- <a href="/" class="logo">
+                    <div class="square">
+                        <center><span class="logo-text">JA</span></center>
+                    </div>
+                </a> -->
+                <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/privacypolicy">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="stats">
+                <p id="heads-count">Heads: 0</p>
+                <p id="tails-count">Tails: 0</p>
+            </div>
+            <div class="coin" id="coin">
+                <div class="heads">
+                    <img src="/images/heads.svg">
+                </div>
+                <div class="tails">
+                    <img src="/images/tails.svg">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="flip-button">
+                Flip Coin
+            </button>
+                <button id="reset-button">
+                Reset
+            </button>
+            </div>
+        </div>
+    </div>
+    <!--Script-->
+    <script defer src="/assets/js/flip.js"></script>
+    <script defer src="/assets/js/jquery.min.js"></script>
+    <script defer src="/assets/js/browser.min.js"></script>
+    <script defer src="/assets/js/breakpoints.min.js"></script>
+    <script defer src="/assets/js/util.js"></script>
+    <script defer src="/assets/js/main.js"></script>
+</body>
+
+</html>

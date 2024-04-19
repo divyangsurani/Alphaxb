@@ -1,0 +1,230 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+input {
+    outline: none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.panel {
+    min-width: 435px;
+    min-height: 300px;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 35 102 / 20%);
+    padding: 20px 40px;
+}
+
+.panel h1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.panel h1 label {
+    font-family: "Courier";
+    font-size: 40px;
+}
+
+.panel .body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel .body .convertion {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 15px 0px 25px 0px;
+}
+
+.panel .body .convertion input {
+    font-family: "Ubuntu Mono", monospace;
+    text-align: center;
+    height: 30px;
+    width: 180px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid dodgerblue;
+}
+
+.panel .body .options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.panel .body .options .owner label.title,
+.panel .body .options .group label.title,
+.panel .body .options .other label.title {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.panel .body .options .owner .permissions .field,
+.panel .body .options .group .permissions .field,
+.panel .body .options .other .permissions .field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border: 1px solid transparent;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.panel .body .options .owner .permissions .field:hover,
+.panel .body .options .owner .permissions .field.active,
+.panel .body .options .group .permissions .field:hover,
+.panel .body .options .group .permissions .field.active,
+.panel .body .options .other .permissions .field:hover,
+.panel .body .options .other .permissions .field.active {
+    border: 1px solid dodgerblue;
+}
+
+.panel .body .options .owner .permissions .field label,
+.panel .body .options .group .permissions .field label,
+.panel .body .options .other .permissions .field label {
+    font-size: 16;
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.panel .body .options .owner .permissions .field input[type=checkbox],
+.panel .body .options .group .permissions .field input[type=checkbox],
+.panel .body .options .other .permissions .field input[type=checkbox] {
+    cursor: pointer;
+    display: none;
+}
+
+.panel .body .options .owner .permissions .field input[type=checkbox]+.chkLike,
+.panel .body .options .group .permissions .field input[type=checkbox]+.chkLike,
+.panel .body .options .other .permissions .field input[type=checkbox]+.chkLike {
+    margin-right: 5px;
+    margin-top: 1px;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    display: block;
+    background-color: white;
+    border: 1px solid dodgerblue;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 0px 1px dodgerblue;
+    transition: 0.3s all ease-in-out;
+    overflow: hidden;
+}
+
+.panel .body .options .owner .permissions .field input[type=checkbox]+.chkLike::after,
+.panel .body .options .group .permissions .field input[type=checkbox]+.chkLike::after,
+.panel .body .options .other .permissions .field input[type=checkbox]+.chkLike::after {
+    content: "";
+    display: block;
+    transition-delay: 0.3s;
+    transition: 0.3s all ease-in-out;
+    background-color: transparent;
+    border: none;
+    height: 5px;
+    width: 10px;
+    transform: translate(2px, 15px) rotateZ(-45deg);
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.panel .body .options .owner .permissions .field input[type=checkbox]:checked+.chkLike,
+.panel .body .options .group .permissions .field input[type=checkbox]:checked+.chkLike,
+.panel .body .options .other .permissions .field input[type=checkbox]:checked+.chkLike {
+    box-shadow: inset 0px 0px 0px 6px dodgerblue;
+}
+
+.panel .body .options .owner .permissions .field input[type=checkbox]:checked+.chkLike::after,
+.panel .body .options .group .permissions .field input[type=checkbox]:checked+.chkLike::after,
+.panel .body .options .other .permissions .field input[type=checkbox]:checked+.chkLike::after {
+    transform: translate(2px, 1px) rotateZ(-45deg);
+}
+
+.panel .body .options .owner .permissions .field input[type=checkbox]:checked+.chkLike+label,
+.panel .body .options .group .permissions .field input[type=checkbox]:checked+.chkLike+label,
+.panel .body .options .other .permissions .field input[type=checkbox]:checked+.chkLike+label {
+    color: dodgerblue;
+}
+
+.panel .body footer {
+    padding-top: 20px;
+}
+
+
+/************ Square *************/
+
+.square {
+    transition: 1s;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 5px solid #000;
+    letter-spacing: normal;
+    line-height: normal;
+    /* Color & Background */
+    color: rgb(0, 0, 0);
+    /* Box */
+    height: 50px;
+    width: 50px;
+    /* Positioning */
+    position: relative;
+    /* Effects */
+    transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+    transition: transform 0.4s ease-in-out 0s;
+    box-sizing: content-box;
+    border-radius: 10px;
+}
+
+.square:hover {
+    transition: 0.5s;
+    transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 736px) {
+    .square {
+        margin-left: 50px;
+        margin-bottom: 200px;
+    }
+}
+
+.logo-text {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: normal;
+    /* Positioning */
+    position: absolute;
+    top: 25px;
+    bottom: 10.7778px;
+    right: 5.29167px;
+    left: 25px;
+    float: none;
+    display: block;
+    clear: none;
+    z-index: auto;
+    /* Effects */
+    transform: matrix(6.12323e-17, 1, -1, 6.12323e-17, -9.77778, -7.11111);
+    transition: transform 0.4s ease-in-out 0s;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+	<link rel="icon" href="/images/mylogo.png">
+	<link rel="stylesheet" href="/assets/css/loan.css" />
+  <link rel="stylesheet" href="/assets/css/nav.css">
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "iavxws4fvy");
+</script>
+</head>
+<body>
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <!-- <a href="/" class="logo">
+                <div class="square">
+                    <center><span class="logo-text"><b>JA</b></span></center>
+                </div>
+            </a> -->
+            <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/privacypolicy">Privacy Policy</a></li>
+        </ul>
+    </nav>
+  <center>
+    <div id="loancal">
+        <h1 style="font-size: 35px;">Loan Calculator</h1>
+        <div class="input">
+        <p>Loan Amount: $</p>
+          <input id="amount" type="number" pattern="[0-9]+" min="1" max="5000000" onchange="computeLoan()">
+        <p>Interest Rate: %</p>
+        <input id="interest_rate" inputmode="numeric" pattern="[0-9]+" min="0" max="100" value="10" step=".1" onchange="computeLoan()">
+        <p>Months to Pay: </p>
+         <input id="months" type="number" pattern="[0-9]+" min="1" max="300" value="1" step="1" onchange="computeLoan()">
+      </div>
+        <p id="payment"></p>
+    </div>
+  </center>
+  </div>
+</body>
+</html>
+<script src="/assets/js/loan.js"></script>
+<script defer src="/assets/js/jquery.min.js"></script>
+<script defer src="/assets/js/browser.min.js"></script>
+<script defer src="/assets/js/breakpoints.min.js"></script>
+<script defer src="/assets/js/util.js"></script>
+<script defer src="/assets/js/main.js"></script>
+</body>
+</html>

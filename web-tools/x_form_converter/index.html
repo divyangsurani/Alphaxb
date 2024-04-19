@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>X Post Converter</title>
+  <style></style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/assets/css/nav.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="icon" href="/images/mylogo.png">
+  <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+
+
+</head>
+<body>
+  <div id="wrapper" style="font-family: Helvetica;">
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <!-- Menu -->
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul style="font-family: Helvetica; font-weight: normal;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/privacypolicy">Privacy Policy</a></li>
+        </ul>
+    </nav>
+</div>
+  <div class="container">
+    <h1 class="header"> <i class="fa-brands fa-x-twitter"></i> Post Converter</h1>
+    <p class="sub-header">Convert your text to X post screenshots!</p>
+    <center>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name">
+      <br><br>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter your username">
+    <br><br>
+    <label for="profile-pic">Profile Picture:</label>
+    <input type="text" id="profile-pic" placeholder="Enter profile picture URL">
+    <br><br>
+    <label for="tweet">Post Text:</label>
+    <textarea id="tweet" placeholder="What's on your mind?"></textarea>
+    <br><br>
+    <label for="verification">Verification Badge:</label>
+    <input type="checkbox" id="verification" onclick="toggleVerificationBadge()">
+      <br><br>
+    <button class="button" onclick="convertToTweet()">Convert to Post   <i class="fa-brands fa-x-twitter"></i></button>
+    <button class="button" onclick="saveScreenshot()">Save Screenshot <i class="fa fa-save"></i></button>
+
+  </center>
+    <br><br>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="save.js"></script>
+  <script defer src="/assets/js/jquery.min.js"></script>
+  <script defer src="/assets/js/browser.min.js"></script>
+  <script defer src="/assets/js/breakpoints.min.js"></script>
+  <script defer src="/assets/js/util.js"></script>
+  <script defer src="/assets/js/main.js"></script>
+</body>
+</html>

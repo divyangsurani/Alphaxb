@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="icon" href="images/mylogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script defer src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+</head>
+<!-- modify this form HTML and place wherever you want your form -->
+
+<body>
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <a href="/" style="border-bottom: none;"><img class="square" src="images/JA.png"></a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="about">About Us</a></li>
+                <li><a href="contact">Contact Us</a></li>
+                <li><a href="privacypolicy">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <center>
+            <h2>Contact Us</h2>
+            <div class="my-form">
+                <form id="my-form" action="https://formspree.io/f/xzbowrjd" method="POST">
+                    <input type="text" name="firstname" required placeholder="Your Name..." inputmode="text" /><br>
+                    <input type="email" name="email" required placeholder="Your E-mail Address..." inputmode="email" /><br>
+                    <input type="text" name="_subject" required id="email-subject" placeholder="Subject..." inputmode="text" /><br>
+                    <input type="text" name="message" required placeholder="What do you want to tell us?" inputmode="text" /><br>
+                    <div class="g-recaptcha" data-sitekey="6LccLfMoAAAAADHBjmRyFRElOQjXo0jIADoqhfmH" style="margin-top: 2%; width: 5%;"></div>
+                    <button id="my-form-button" class="submit">Submit <i class="far fa-paper-plane"></i></button>
+                    <p id="my-form-status"></p>
+                </form>
+            </div>
+        </center>
+        <!-- Place this script at the end of the body tag -->
+    </div>
+    <!-- Scripts -->
+    <script defer src="assets/js/jquery.min.js"></script>
+    <script defer src="assets/js/browser.min.js"></script>
+    <script defer src="assets/js/breakpoints.min.js"></script>
+    <script defer src="assets/js/util.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <script>
+        var form = document.getElementById("my-form");
+        window.onload = function() {
+            var el = document.getElementById('g-recaptcha-response');
+            if (el) {
+                el.setAttribute('required', 'required');
+            }
+        }
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("my-form-status");
+            var data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                status.innerHTML = "Thanks for your response. We'll be in contact with you soon!";
+                form.reset()
+            }).catch(error => {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+            });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
+</body>
+
+</html>

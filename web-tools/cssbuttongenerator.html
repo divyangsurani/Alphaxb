@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>CSS Button Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/jquery.minicolors/2.1.2/jquery.minicolors.css'>
+    <link rel="icon" href="/images/mylogo.png">
+    <link rel="stylesheet" href="/assets/css/cssbuttongenerator.css">
+    <link rel="stylesheet" href="/assets/css/nav.css">
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "iavxws4fvy");
+    </script>
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <!-- <a href="/" class="logo">
+                    <div class="square">
+                        <center><span class="logo-text"><b>JA</b></span></center>
+                    </div>
+                </a> -->
+                <a href="/" style="border-bottom: none;"><img class="square" src="/images/JA.png"></a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2 style="font-size: 1.1em; font-weight: 800; color: white;">Menu</h2>
+            <ul>
+                <li style="color: white; font-size: 18px;"><a href="/">Home</a></li>
+                <li style="color: white; font-size: 18px;"><a href="/about">About Us</a></li>
+                <li style="color: white; font-size: 18px;"><a href="/contact">Contact Us</a></li>
+                <li style="color: white; font-size: 18px;"><a href="/privacypolicy">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <!--container-->
+            <center>
+                <h1>CSS Button Generator</h1>
+            </center>
+
+            <div class="generator-wrapper">
+                <h3 class="first">Customize Area</h3>
+                <div class="generate">
+                    <!--generate-->
+                    <div class="wrap">
+                        <p class="title">Text :</p>
+                        <input type="text" value="Click me" class="text" placeholder="Text" /></br>
+                    </div>
+
+                    <div class="wrap">
+                        <p class="title">Font Family :</p>
+                        <select class="font">
+                          <option>Arial, Helvetica, sans-serif</option>
+                          <option>"Times New Roman", Times, serif</option>
+                          <option>"Comic Sans MS", cursive, sans-serif</option>
+                          <option>Impact, Charcoal, sans-serif</option>
+                          <option >Verdana, Geneva, sans-serif</option>
+                          <option>"Lucida Console", Monaco, monospace</option>
+                        </select>
+                    </div>
+                    <div class="wrap">
+                        <p class="title">Font Size :</p>
+                        <div id="font-size" class="ui-slider"></div>
+                        <div id="font-size-amount">18px</div>
+                    </div>
+
+                    <div class="wrap">
+                        <p class="title">Border Radius :</p>
+                        <div id="border-radius" class="ui-slider"></div>
+                        <div id="border-radius-amount">4px</div>
+                    </div>
+
+                    <div class="wrap">
+                        <p class="title">Padding Left :</p>
+                        <input data-numscrubber type="number" min="0" max="50" value="10" class="padding" id="padding-left" /></br>
+                    </div>
+                    <div class="wrap">
+                        <p class="title">Padding Right :</p>
+                        <input data-numscrubber type="number" min="0" max="50" value="10" class="padding" id="padding-right" /></br>
+                    </div>
+                    <div class="wrap">
+                        <p class="title">Padding Top :</p>
+                        <input data-numscrubber type="number" min="0" max="50" value="5" class="padding" id="padding-top" /></br>
+                    </div>
+                    <div class="wrap">
+                        <p class="title">Padding Bottom :</p>
+                        <input data-numscrubber type="number" min="0" max="50" value="5" class="padding" id="padding-bottom" /></br>
+                    </div>
+
+                    <div class="wrap">
+                        <p class="title">Text Color :</p>
+                        <input type="text" id="hue" class="color" data-control="hue">
+                    </div>
+                    <div class="wrap">
+                        <p class="title">Background :</p>
+                        <input type="text" id="hue" class="background-color" data-control="hue">
+                    </div>
+
+                    <div class="wrap">
+                        <p class="title">Hover Color :</p>
+                        <input type="text" id="hue" class="color-hover" data-control="hue">
+                    </div>
+
+                    <div class="wrap">
+                        <p class="title">Hover Background :</p>
+                        <input type="text" id="hue" class="background-color-hover" data-control="hue">
+                    </div>
+
+
+                </div>
+                <!--generate-->
+
+            </div>
+
+            <div class="button-preview">
+                <h3 class="second">Button Preview</h3>
+                <div class="button-wrapper">
+                    <button class="button">Click me</button>
+                </div>
+            </div>
+
+
+            <div class="codes-wrapper">
+                <center>
+                    <h3 class="third">Codes</h3>
+                </center>
+                <button class="clipboard" data-clipboard-target="#codes">Copy Codes</button>
+                <span class="copied-to-clipboard">Copied to clipboard!</span>
+                <div class="codes" id="codes">
+                    <span>.button {</span>
+                    <p class="line1">font-family:Arial, Helvetica, sans-serif;</p>
+                    <p class="line2">font-size:18px;</p>
+                    <p class="line3">border-radius:4px;</p>
+                    <p class="line4">padding-left:10px;</p>
+                    <p class="line5">padding-right:10px;</p>
+                    <p class="line6">padding-top:5px;</p>
+                    <p class="line7">padding-bottom:5px;</p>
+                    <p class="line8">color:#ffffff;</p>
+                    <p class="line9">background-color:#cc6666;</p>
+                    <p class="line12 auto">outline:none;</p>
+                    <p class="line13 auto">border:none;</p>
+                    <p class="line14 auto">cursor:pointer;</p>
+                    <p class="line15 auto">display:inline-block;</p>
+                    <span>}</span></br>
+                    </br>
+                    <span>.button:hover {</span>
+                    <p class="line10">color:#ffffff;</p>
+                    <p class="line11">background-color:#8e4747;</p>
+                    <span>}</span>
+                </div>
+            </div>
+        </div>
+        <!--container-->
+
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/jquery.minicolors/2.1.2/jquery.minicolors.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js'></script>
+    <script src='https://cdn.rawgit.com/mburakerman/numscrubberjs/master/src/numscrubber.js'></script>
+    <!-- Scripts -->
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script id="rendered-js">
+        $(function() {
+            $(".text").bind("change keyup input", function(e) {
+                var writtenText = $(".text").val();
+                $(".button").text(writtenText);
+
+                return false;
+            });
+
+            $(".font").on("change", function(e) {
+                var selected = $(".font option:selected").val();
+                $(".button").css("font-family", selected);
+
+                $(".codes .line1").text("font-family:" + selected + ";");
+                return false;
+            });
+
+            $("#font-size").slider({
+                range: "min",
+                value: 18,
+                min: 0,
+                max: 40,
+                slide: update
+            });
+
+
+            function update(event, slider) {
+                $("#font-size-amount").text(slider.value + "px");
+                $(".button").css("font-size", slider.value + "px");
+
+                $(".codes .line2").text("font-size:" + slider.value + "px" + ";");
+            }
+
+            $("#border-radius").slider({
+                range: "min",
+                value: 4,
+                min: 0,
+                max: 40,
+                slide: radius
+            });
+
+
+            function radius(event, slider) {
+                $("#border-radius-amount").text(slider.value + "px");
+                $(".button").css("border-radius", slider.value + "px");
+
+                $(".codes .line3").text("border-radius:" + slider.value + "px" + ";");
+            }
+
+            $(".padding").bind("change keyup input", function() {
+                var paddingLeft = $("#padding-left").val();
+                var paddingRight = $("#padding-right").val();
+                var paddingTop = $("#padding-top").val();
+                var paddingBottom = $("#padding-bottom").val();
+
+                $(".button").css("padding-left", parseInt(paddingLeft, 10));
+                $(".button").css("padding-right", parseInt(paddingRight, 10));
+                $(".button").css("padding-top", parseInt(paddingTop, 10));
+                $(".button").css("padding-bottom", parseInt(paddingBottom, 10));
+
+                $(".codes .line4").text("padding-left:" + paddingLeft + "px" + ";");
+                $(".codes .line5").text("padding-right:" + paddingRight + "px" + ";");
+                $(".codes .line6").text("padding-top:" + paddingTop + "px" + ";");
+                $(".codes .line7").text("padding-bottom:" + paddingBottom + "px" + ";");
+            });
+
+            $(".color").minicolors({
+                defaultValue: "#ffffff"
+            });
+
+            $(".color").on("change", function() {
+                var color = $(".color").val();
+                $(".button").css("color", color);
+
+                $(".codes .line8").text("color:" + color + ";");
+            });
+
+            $(".background-color").minicolors({
+                defaultValue: "#cc6666"
+            });
+
+            $(".background-color").on("change", function() {
+                var backgroundColor = $(".background-color").val();
+                $(".button").css("background-color", backgroundColor);
+
+                $(".codes .line9").text("background-color:" + backgroundColor + ";");
+            });
+
+            $(".color-hover").on("change", function() {
+                var hoverColor = $(".color-hover").val();
+                var color = $(".color").val();
+
+                $(".button").hover(function() {
+                    $(".button").css("color", hoverColor);
+                });
+                $(".button").mouseout(function() {
+                    $(".button").css("color", color);
+                });
+
+                $(".codes .line10").text("color:" + hoverColor + ";");
+            });
+
+            $(".background-color-hover").minicolors({
+                defaultValue: "#8e4747"
+            });
+
+            $(".color-hover").minicolors({
+                defaultValue: "#ffffff"
+            });
+
+            $(".background-color-hover").on("change", function() {
+                var hoverBackground = $(".background-color-hover").val();
+                var backgroundColor = $(".background-color").val();
+
+                $(".button").hover(function() {
+                    $(".button").css("background-color", hoverBackground);
+                });
+                $(".button").mouseout(function() {
+                    $(".button").css("background-color", backgroundColor);
+                });
+
+                $(".codes .line11").text("background-color:" + hoverBackground + ";");
+            });
+
+            $(".button").hover(function() {
+                var hoverColor = $(".color-hover").val();
+                var color = $(".color").val();
+                var hoverBackground = $(".background-color-hover").val();
+                var backgroundColor = $(".background-color").val();
+
+                $(".button").css("color", hoverColor);
+                $(".button").css("background-color", hoverBackground);
+            });
+            $(".button").mouseout(function() {
+                var hoverColor = $(".color-hover").val();
+                var color = $(".color").val();
+                var hoverBackground = $(".background-color-hover").val();
+                var backgroundColor = $(".background-color").val();
+
+                $(".button").css("background-color", backgroundColor);
+                $(".button").css("color", color);
+            });
+
+            var clipboard = new Clipboard(".clipboard");
+            $(".copied-to-clipboard").css("opacity", 0);
+
+            $(".clipboard").click(function() {
+                $(this).html("Copied!");
+                $(".copied-to-clipboard").css("opacity", 1);
+
+                setTimeout(function() {
+                    $(".clipboard").html("Copy codes");
+                    $(".clipboard").prop("disabled", false);
+                    $(".copied-to-clipboard").css("opacity", 0);
+                }, 1750);
+            });
+
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 150) {
+                    $(".button-preview").css("top", 400);
+                } else {
+                    $(".button-preview").css("top", 0);
+                }
+            });
+
+            Numscrubber.init();
+        });
+        //# sourceURL=pen.js
+    </script>
+
+
+
+</body>
+
+</html>

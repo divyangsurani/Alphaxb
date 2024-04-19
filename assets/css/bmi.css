@@ -1,0 +1,173 @@
+* {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    /* height: 100vh; */
+    padding: 0;
+    border: 0;
+    background-color: #F7F8FA;
+}
+
+p {
+    margin: 0 0 2em 0;
+}
+
+
+/************ Square *************/
+
+.square {
+    transition: 1s;
+    margin-left: 90px;
+    margin-top: 100px;
+    border: 5px solid #000;
+    letter-spacing: normal;
+    line-height: normal;
+    /* Color & Background */
+    color: rgb(0, 0, 0);
+    /* Box */
+    height: 50px;
+    width: 50px;
+    /* Positioning */
+    position: relative;
+    /* Effects */
+    transform: matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0);
+    transition: transform 0.4s ease-in-out 0s;
+    box-sizing: content-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.square:hover {
+    transition: 0.5s;
+    transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 736px) {
+    .square {
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+    .form-wrap {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+.logo-text {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: normal;
+    /* Positioning */
+    position: absolute;
+    top: 25px;
+    bottom: 10.7778px;
+    right: 5.29167px;
+    left: 25px;
+    float: none;
+    display: block;
+    clear: none;
+    z-index: auto;
+    /* Effects */
+    transform: matrix(6.12323e-17, 1, -1, 6.12323e-17, -9.77778, -7.11111);
+    transition: transform 0.4s ease-in-out 0s;
+}
+
+.row {
+    margin-top: 40px;
+    margin-bottom: 5%;
+}
+
+.display-4 {
+    padding-top: 20px;
+}
+
+#lbsInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#kgInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#gmInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#ozInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#cmInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#mInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#inchInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#ftInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#bmiInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#calinInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#caloutInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+#ratioInput {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+.indexcol {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background: #F7F8FA;
+    color: #000;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 0px 4px 8px 0 rgb(0, 35, 102, 0.2);
+}
+
+.btn {
+    color: white;
+    outline: 1px solid black;
+}
